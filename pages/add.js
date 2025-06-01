@@ -25,6 +25,10 @@ export default function Home() {
                 placeholder="e.g. Software Engineer"
               />
             </InputField>
+            <InputField>
+              <InputField.Label htmlFor="subtitle">Subtitle</InputField.Label>
+              <InputField.Input id="subtitle" placeholder="e.g. Company name" />
+            </InputField>
             <div className="flex flex-col gap-4 sm:flex-row">
               <InputField className="grow">
                 <InputField.Label htmlFor="start-date">
@@ -171,7 +175,7 @@ export default function Home() {
               </InputField>
               <ul className="flex flex-col gap-2">
                 <li className="mb-2 flex items-start gap-2">
-                  <Card className="px-5 py-3">
+                  <Card className="relative px-5 py-3 pr-[44px]">
                     <span>
                       Contributed to the Playwright test suites, writing tests
                       for new features and adding test cases to cover
@@ -185,7 +189,7 @@ export default function Home() {
                     </span>
                     <button
                       type="button"
-                      className="rounded-xl border-2 px-2 py-2 font-semibold terminal:rounded-none terminal:border-orange-500 dark:border-transparent dark:text-slate-200"
+                      className="absolute right-0 top-0 rounded-xl border-2 px-2 py-2 font-semibold terminal:rounded-none terminal:border-orange-500 dark:border-transparent dark:text-slate-200"
                     >
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -207,7 +211,23 @@ export default function Home() {
                 </li>
               </ul>
             </div>
-            <Button>Save</Button>
+            <Button className="flex items-center justify-center gap-2 md:w-fit md:flex-row-reverse md:self-end">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="lucide lucide-chevron-right-icon lucide-chevron-right"
+              >
+                <path d="m9 18 6-6-6-6" />
+              </svg>
+              Save experience
+            </Button>
           </form>
         </div>
       </main>
