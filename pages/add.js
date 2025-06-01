@@ -144,7 +144,9 @@ export default function Home() {
             </div>
             <div className="flex flex-col gap-4">
               <InputField>
-                <InputField.Label>Highlights</InputField.Label>
+                <InputField.Label htmlFor="new-highlights">
+                  Highlights
+                </InputField.Label>
                 <div className="flex flex-col items-start gap-4 sm:flex-row">
                   <textarea
                     id="new-highlights"
