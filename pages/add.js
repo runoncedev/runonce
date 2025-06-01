@@ -17,6 +17,9 @@ export default function Home() {
       </Head>
       <main>
         <div className="mx-auto max-w-screen-md px-4 py-2">
+          <h1 className="my-4 text-5xl font-extrabold drop-shadow dark:drop-shadow-none">
+            Add new experience
+          </h1>
           <form className="flex flex-col gap-4">
             <InputField>
               <InputField.Label htmlFor="title">Title *</InputField.Label>
@@ -226,7 +229,7 @@ export default function Home() {
               >
                 <path d="m9 18 6-6-6-6" />
               </svg>
-              Save experience
+              Add experience
             </Button>
           </form>
         </div>
