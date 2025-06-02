@@ -151,7 +151,7 @@ export default function Home() {
                   <textarea
                     id="new-highlights"
                     rows={1}
-                    className="grow resize-none rounded-xl border-2 px-4 py-2 font-normal [field-sizing:content] terminal:rounded-none terminal:border-orange-500 dark:border-slate-800 dark:text-slate-200"
+                    className="max-h-60 w-full grow resize-none rounded-xl border-2 px-4 py-2 font-normal [field-sizing:content] terminal:rounded-none terminal:border-orange-500 dark:border-slate-800 dark:text-slate-200"
                     placeholder="i.e. Whatever you find relevant about this experience"
                   />
                   <button
@@ -231,7 +231,7 @@ export default function Home() {
               >
                 <path d="m9 18 6-6-6-6" />
               </svg>
-              Add experience
+              Add to resume
             </Button>
           </form>
         </div>
