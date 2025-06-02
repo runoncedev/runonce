@@ -80,9 +80,9 @@ export default function Home() {
                 </div>
               </InputField>
               <ul className="flex flex-wrap gap-4">
-                <li className="inline-flex items-center gap-2 rounded-xl border-2 px-4 py-2 font-semibold terminal:rounded-none terminal:border-orange-500 dark:border-slate-800 dark:text-slate-200">
+                <li className="relative inline-flex items-center gap-2 rounded-xl border-2 px-4 py-2 pr-[44px] font-semibold terminal:rounded-none terminal:border-orange-500 dark:border-slate-800 dark:text-slate-200">
                   <span>Keyword 1</span>
-                  <button type="button">
+                  <button type="button" className="absolute right-[11px]">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       width="24"
@@ -100,9 +100,9 @@ export default function Home() {
                     </svg>
                   </button>
                 </li>
-                <li className="inline-flex items-center gap-2 rounded-xl border-2 px-4 py-2 font-semibold terminal:rounded-none terminal:border-orange-500 dark:border-slate-800 dark:text-slate-200">
+                <li className="relative inline-flex items-center gap-2 rounded-xl border-2 px-4 py-2 pr-[44px] font-semibold terminal:rounded-none terminal:border-orange-500 dark:border-slate-800 dark:text-slate-200">
                   <span>Keyword 1</span>
-                  <button type="button">
+                  <button type="button" className="absolute right-[11px]">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       width="24"
@@ -120,9 +120,9 @@ export default function Home() {
                     </svg>
                   </button>
                 </li>
-                <li className="inline-flex items-center gap-2 rounded-xl border-2 px-4 py-2 font-semibold terminal:rounded-none terminal:border-orange-500 dark:border-slate-800 dark:text-slate-200">
+                <li className="relative inline-flex items-center gap-2 rounded-xl border-2 px-4 py-2 pr-[44px] font-semibold terminal:rounded-none terminal:border-orange-500 dark:border-slate-800 dark:text-slate-200">
                   <span>Keyword 1</span>
-                  <button type="button">
+                  <button type="button" className="absolute right-[11px]">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       width="24"
