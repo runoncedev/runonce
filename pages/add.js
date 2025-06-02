@@ -156,7 +156,7 @@ export default function Home() {
                   />
                   <button
                     type="button"
-                    className="flex shrink justify-center gap-2 rounded-xl border-2 px-4 py-2 font-semibold terminal:rounded-none terminal:border-orange-500 dark:border-slate-800 dark:text-slate-200"
+                    className="flex w-full shrink justify-center gap-2 rounded-xl border-2 px-4 py-2 font-semibold terminal:rounded-none terminal:border-orange-500 dark:border-slate-800 dark:text-slate-200 sm:w-fit"
                   >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
