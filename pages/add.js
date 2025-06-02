@@ -16,7 +16,7 @@ export default function Home() {
         <meta property="og:image" content="https://runonce.dev/og.jpg" />
       </Head>
       <main>
-        <div className="mx-auto max-w-screen-md px-4 py-2">
+        <div className="mx-auto max-w-screen-md px-4 pb-4 pt-2">
           <h1 className="my-4 text-5xl font-extrabold drop-shadow dark:drop-shadow-none">
             Add new experience
           </h1>
@@ -216,7 +216,7 @@ export default function Home() {
                 </li>
               </ul>
             </div>
-            <Button className="flex items-center justify-center gap-2 md:w-fit md:flex-row-reverse md:self-end">
+            <Button className="flex items-center justify-center gap-2 dark:bg-slate-800 md:w-fit md:flex-row-reverse md:self-end">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="24"
