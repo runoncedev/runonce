@@ -57,7 +57,7 @@ export default function Home() {
                   />
                   <Button
                     type="button"
-                    className="flex w-full shrink justify-center gap-2 sm:w-fit"
+                    className="relative w-full shrink pl-[44px] sm:w-fit"
                   >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -69,7 +69,7 @@ export default function Home() {
                       stroke-width="2"
                       stroke-linecap="round"
                       stroke-linejoin="round"
-                      class="lucide lucide-plus-icon lucide-plus"
+                      class="lucide lucide-plus-icon lucide-plus absolute left-[11px]"
                     >
                       <path d="M5 12h14" />
                       <path d="M12 5v14" />
@@ -161,7 +161,7 @@ export default function Home() {
                   />
                   <Button
                     type="button"
-                    className="flex w-full shrink justify-center gap-2 sm:w-fit"
+                    className="relative w-full shrink pl-[44px] sm:w-fit"
                   >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -173,7 +173,7 @@ export default function Home() {
                       stroke-width="2"
                       stroke-linecap="round"
                       stroke-linejoin="round"
-                      class="lucide lucide-plus-icon lucide-plus"
+                      class="lucide lucide-plus-icon lucide-plus absolute left-[11px]"
                     >
                       <path d="M5 12h14" />
                       <path d="M12 5v14" />
