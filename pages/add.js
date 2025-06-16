@@ -55,9 +55,9 @@ export default function Home() {
                     className="grow"
                     placeholder="e.g. React, Node.js, SQL"
                   />
-                  <button
+                  <Button
                     type="button"
-                    className="flex shrink justify-center gap-2 rounded-xl border-2 px-4 py-2 font-semibold terminal:rounded-none terminal:border-orange-500 dark:border-slate-800 dark:text-slate-200"
+                    className="flex w-full shrink justify-center gap-2 sm:w-fit"
                   >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -76,7 +76,7 @@ export default function Home() {
                     </svg>{" "}
                     Add
                     <span className="block sm:hidden"> keyword</span>
-                  </button>
+                  </Button>
                 </div>
               </InputField>
               <ul className="flex flex-wrap gap-4">
@@ -153,10 +153,15 @@ export default function Home() {
                     rows={1}
                     className="max-h-60 w-full grow resize-none rounded-xl border-2 px-4 py-2 font-normal [field-sizing:content] terminal:rounded-none terminal:border-orange-500 dark:border-slate-800 dark:text-slate-200"
                     placeholder="i.e. Whatever you find relevant about this experience"
+                    onKeyDown={(e) => {
+                      if (e.key === "Enter") {
+                        e.preventDefault();
+                      }
+                    }}
                   />
-                  <button
+                  <Button
                     type="button"
-                    className="flex w-full shrink justify-center gap-2 rounded-xl border-2 px-4 py-2 font-semibold terminal:rounded-none terminal:border-orange-500 dark:border-slate-800 dark:text-slate-200 sm:w-fit"
+                    className="flex w-full shrink justify-center gap-2 sm:w-fit"
                   >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -175,7 +180,7 @@ export default function Home() {
                     </svg>{" "}
                     Add
                     <span className="block sm:hidden"> highlight</span>
-                  </button>
+                  </Button>
                 </div>
               </InputField>
               <ul className="flex flex-col gap-2">
