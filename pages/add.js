@@ -1,6 +1,7 @@
 import Button from "@/components/Button";
 import Card from "@/components/Card";
 import InputField from "@/components/InputField";
+import PlusIcon from "@/components/icons/PlusIcon";
 import Head from "next/head";
 
 export default function Home() {
@@ -57,25 +58,13 @@ export default function Home() {
                   />
                   <Button
                     type="button"
-                    className="relative w-full shrink pl-[44px] sm:w-fit"
+                    className="flex w-full shrink justify-center gap-2 sm:relative sm:w-fit sm:pl-[44px]"
                   >
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="24"
-                      height="24"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      class="lucide lucide-plus-icon lucide-plus absolute left-[11px]"
-                    >
-                      <path d="M5 12h14" />
-                      <path d="M12 5v14" />
-                    </svg>{" "}
-                    Add
-                    <span className="block sm:hidden"> keyword</span>
+                    <PlusIcon className="sm:absolute sm:left-[11px]" />
+                    <span className="shrink-0">
+                      Add
+                      <span className="sm:hidden"> keyword</span>
+                    </span>
                   </Button>
                 </div>
               </InputField>
@@ -161,25 +150,13 @@ export default function Home() {
                   />
                   <Button
                     type="button"
-                    className="relative w-full shrink pl-[44px] sm:w-fit"
+                    className="flex w-full shrink justify-center gap-2 sm:relative sm:w-fit sm:pl-[44px]"
                   >
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="24"
-                      height="24"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      class="lucide lucide-plus-icon lucide-plus absolute left-[11px]"
-                    >
-                      <path d="M5 12h14" />
-                      <path d="M12 5v14" />
-                    </svg>{" "}
-                    Add
-                    <span className="block sm:hidden"> highlight</span>
+                    <PlusIcon className="sm:absolute sm:left-[11px]" />
+                    <span className="shrink-0">
+                      Add
+                      <span className="sm:hidden"> highlight</span>
+                    </span>
                   </Button>
                 </div>
               </InputField>
