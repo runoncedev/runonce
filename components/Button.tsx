@@ -1,6 +1,13 @@
+import React from "react";
 import { twMerge } from "tailwind-merge";
 
-const Button = ({ children, className, ...props }) => {
+type ButtonProps = {
+  children: React.ReactNode;
+  className?: string;
+  onClick?: () => void;
+};
+
+const Button = ({ children, className, ...props }: ButtonProps) => {
   return (
     <button
       className={twMerge(
