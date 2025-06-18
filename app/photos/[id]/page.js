@@ -1,10 +1,12 @@
-"use client";
+"use client";;
+import { use } from "react";
 
 import { photos } from "@/utils/photos";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 
-export default function Photo({ params }) {
+export default function Photo(props) {
+  const params = use(props.params);
   const router = useRouter();
 
   const photo = photos.find(({ id }) => id === params.id);
