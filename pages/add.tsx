@@ -1,7 +1,5 @@
 import Button from "@/components/Button";
-import Card from "@/components/Card";
 import InputField from "@/components/InputField";
-import PlusIcon from "@/components/icons/PlusIcon";
 import Head from "next/head";
 
 export default function Home() {
@@ -56,7 +54,7 @@ export default function Home() {
                     className="grow"
                     placeholder="e.g. React, Node.js, SQL"
                   />
-                  <Button
+                  {/* <Button
                     type="button"
                     className="flex w-full shrink justify-center gap-2 sm:relative sm:w-fit"
                   >
@@ -65,10 +63,10 @@ export default function Home() {
                       Add
                       <span className="sm:hidden"> keyword</span>
                     </span>
-                  </Button>
+                  </Button> */}
                 </div>
               </InputField>
-              <ul className="flex flex-wrap gap-4">
+              {/* <ul className="flex flex-wrap gap-4">
                 <li className="group relative inline-flex items-center rounded-lg border-2 terminal:rounded-none terminal:border-orange-500 dark:border-slate-800 dark:text-slate-200 overflow-hidden">
                   <span className="px-3.5 py-1">Keyword 1</span>
                   <button
@@ -92,7 +90,7 @@ export default function Home() {
                     </svg>
                   </button>
                 </li>
-              </ul>
+              </ul> */}
             </div>
             <div className="flex flex-col gap-4">
               <InputField>
@@ -111,7 +109,7 @@ export default function Home() {
                       }
                     }}
                   />
-                  <Button
+                  {/* <Button
                     type="button"
                     className="flex w-full shrink justify-center gap-2 sm:relative sm:w-fit sm:pl-[44px]"
                   >
@@ -120,10 +118,10 @@ export default function Home() {
                       Add
                       <span className="sm:hidden"> highlight</span>
                     </span>
-                  </Button>
+                  </Button> */}
                 </div>
               </InputField>
-              <ul className="flex flex-col gap-2">
+              {/* <ul className="flex flex-col gap-2">
                 <li className="mb-2 flex items-start gap-2">
                   <Card className="relative px-5 py-3 pr-[44px]">
                     <span>
@@ -159,7 +157,7 @@ export default function Home() {
                     </button>
                   </Card>
                 </li>
-              </ul>
+              </ul> */}
             </div>
             <Button className="flex items-center justify-center gap-2 dark:bg-slate-800 md:w-fit md:flex-row-reverse md:self-end">
               <svg
