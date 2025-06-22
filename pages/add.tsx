@@ -60,7 +60,7 @@ export default function Home() {
                     type="button"
                     className="flex w-full shrink justify-center gap-2 sm:relative sm:w-fit sm:pl-[44px]"
                   >
-                    <PlusIcon className="sm:absolute sm:left-[11px]" />
+                    <PlusIcon className="sm:absolute sm:left-[12px]" />
                     <span className="shrink-0">
                       Add
                       <span className="sm:hidden"> keyword</span>
@@ -82,7 +82,7 @@ export default function Home() {
                       stroke-width="2"
                       stroke-linecap="round"
                       stroke-linejoin="round"
-                      class="lucide lucide-x"
+                      className="lucide lucide-x"
                     >
                       <path d="M18 6 6 18"></path>
                       <path d="m6 6 12 12"></path>
@@ -102,7 +102,7 @@ export default function Home() {
                       stroke-width="2"
                       stroke-linecap="round"
                       stroke-linejoin="round"
-                      class="lucide lucide-x"
+                      className="lucide lucide-x"
                     >
                       <path d="M18 6 6 18"></path>
                       <path d="m6 6 12 12"></path>
@@ -122,7 +122,7 @@ export default function Home() {
                       stroke-width="2"
                       stroke-linecap="round"
                       stroke-linejoin="round"
-                      class="lucide lucide-x"
+                      className="lucide lucide-x"
                     >
                       <path d="M18 6 6 18"></path>
                       <path d="m6 6 12 12"></path>
@@ -188,7 +188,7 @@ export default function Home() {
                         stroke-width="2"
                         stroke-linecap="round"
                         stroke-linejoin="round"
-                        class="lucide lucide-x"
+                        className="lucide lucide-x"
                       >
                         <path d="M18 6 6 18"></path>
                         <path d="m6 6 12 12"></path>
@@ -209,7 +209,7 @@ export default function Home() {
                 stroke-width="2"
                 stroke-linecap="round"
                 stroke-linejoin="round"
-                class="lucide lucide-chevron-right-icon lucide-chevron-right"
+                className="lucide lucide-chevron-right-icon lucide-chevron-right"
               >
                 <path d="m9 18 6-6-6-6" />
               </svg>
