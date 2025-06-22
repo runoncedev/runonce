@@ -11,7 +11,7 @@ export default function PlusIcon({ className }) {
       strokeLinecap="round"
       strokeLinejoin="round"
       className={twMerge(
-        "lucide lucide-plus-icon lucide-plus bg-pink-400 w-6 h-6",
+        "lucide lucide-plus-icon lucide-plus bg-pink-700 w-6 h-6",
         className,
       )}
     >

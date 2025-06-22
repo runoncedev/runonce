@@ -12,16 +12,16 @@ export default function Home() {
         />
         <meta property="og:image" content="https://runonce.dev/og.jpg" />
       </Head>
-      <main className="mx-auto flex w-full max-w-screen-md grow flex-col justify-center px-4">
-        <h1 className="bg-gradient-to-r from-cyan-500 to-blue-500 bg-clip-text text-center text-9xl font-extrabold uppercase italic tracking-wider text-slate-900 decoration-white decoration-wavy decoration-8 underline-offset-[20px] [-webkit-text-stroke:4px_transparent] [text-decoration-skip-ink:none] [text-shadow:white_1px_0_10px]">
+      <main className="mx-auto flex w-full max-w-(--breakpoint-md) grow flex-col justify-center px-4">
+        <h1 className="bg-linear-to-r from-cyan-500 to-blue-500 bg-clip-text text-center text-9xl font-extrabold uppercase italic tracking-wider text-slate-900 decoration-white decoration-wavy decoration-8 underline-offset-20 [-webkit-text-stroke:4px_transparent] [text-decoration-skip-ink:none] [text-shadow:white_1px_0_10px]">
           Runonce
         </h1>
-        <h1 className="mt-10 text-9xl font-extrabold uppercase italic tracking-wider [filter:url('#goo')]">
+        <h1 className="mt-10 text-9xl font-extrabold uppercase italic tracking-wider filter-[url('#goo')]">
           Runonce
         </h1>
         <h1
           id="gooey-border-h1"
-          className="mt-10 text-9xl font-extrabold uppercase italic tracking-wider text-slate-900 [filter:url('#gooey-border')]"
+          className="mt-10 text-9xl font-extrabold uppercase italic tracking-wider text-slate-900 filter-[url('#gooey-border')]"
         >
           Runonce
         </h1>

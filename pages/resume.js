@@ -30,7 +30,7 @@ export default function Home() {
       </Head>
       <main>
         <Header />
-        <div className="mx-auto flex  max-w-screen-md justify-between gap-4 px-4">
+        <div className="mx-auto flex  max-w-(--breakpoint-md) justify-between gap-4 px-4">
           <Link
             className="group mb-5 flex gap-2 rounded-xl border-2 px-4 py-2 font-semibold text-slate-300 underline decoration-transparent decoration-wavy decoration-2 underline-offset-8 transition-all duration-150 terminal:rounded-none terminal:border-orange-500 dark:border-slate-800 dark:text-slate-200 "
             href="/add"
@@ -90,7 +90,7 @@ export default function Home() {
             </svg>
           </Button>
         </div>
-        <div className="mx-auto flex max-w-screen-md flex-col gap-7 px-4 print:max-w-none print:gap-3 print:px-0">
+        <div className="mx-auto flex max-w-(--breakpoint-md) flex-col gap-7 px-4 print:max-w-none print:gap-3 print:px-0">
           <Tromzo />
           <Konfio />
           {/* <Yappa /> */}
@@ -116,7 +116,7 @@ export default function Home() {
                   : "invisible grid-rows-[0fr] opacity-0")
               }
             >
-              <div className="row-[1_/_span_2] overflow-hidden">
+              <div className="row-[1/span_2] overflow-hidden">
                 <div className="mt-7 flex flex-col gap-7">
                   {/* <FadeInOnEntry>
                     <Gm2dev />
@@ -135,9 +135,9 @@ export default function Home() {
             </div>
           </div>
         </div>
-        {/* <div className="mx-auto max-w-screen-md px-4 py-10">
+        {/* <div className="mx-auto max-w-(--breakpoint-md) px-4 py-10">
           <blockquote cite="https://addyosmani.com/blog/good-code/">
-            <p className="text-center text-3xl font-thin tracking-wide text-slate-300 [text-wrap:balance]">
+            <p className="text-center text-3xl font-thin tracking-wide text-slate-300 text-balance">
               Good code is like a love letter to the next developer who will
               maintain it.
             </p>
@@ -149,7 +149,7 @@ export default function Home() {
             </footer>
           </blockquote>
           <blockquote cite="https://addyosmani.com/blog/good-code/">
-            <p className="text-center text-3xl font-thin tracking-wide text-slate-300 [text-wrap:balance]">
+            <p className="text-center text-3xl font-thin tracking-wide text-slate-300 text-balance">
               You should name a variable using the same care with which you name
               a first-born child.
             </p>
@@ -162,7 +162,7 @@ export default function Home() {
           </blockquote>
         </div> */}
         <div className="mt-8 bg-slate-200 py-6 text-center terminal:bg-black dark:bg-slate-800 print:mt-0 sm:text-left">
-          <p className="mx-auto max-w-screen-md px-4 text-slate-800 terminal:text-yellow-200 dark:text-slate-400">
+          <p className="mx-auto max-w-(--breakpoint-md) px-4 text-slate-800 terminal:text-yellow-200 dark:text-slate-400">
             Contact me at{" "}
             <a
               href="mailto:camilorivera86@gmail.com"

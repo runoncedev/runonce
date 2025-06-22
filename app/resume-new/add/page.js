@@ -16,8 +16,8 @@ export default function Home() {
         <meta property="og:image" content="https://runonce.dev/og.jpg" />
       </Head>
       <main>
-        <div className="mx-auto max-w-screen-md px-4 py-2">
-          <h1 className="my-4 text-5xl font-extrabold drop-shadow dark:drop-shadow-none">
+        <div className="mx-auto max-w-(--breakpoint-md) px-4 py-2">
+          <h1 className="my-4 text-5xl font-extrabold drop-shadow-sm dark:drop-shadow-none">
             Add new experience
           </h1>
           <form className="flex flex-col gap-4">
@@ -149,7 +149,7 @@ export default function Home() {
                   <textarea
                     id="new-highlights"
                     rows={1}
-                    className="grow resize-none rounded-xl border-2 px-4 py-2 font-normal [field-sizing:content] terminal:rounded-none terminal:border-orange-500 dark:border-slate-800 dark:text-slate-200"
+                    className="grow resize-none rounded-xl border-2 px-4 py-2 font-normal field-sizing-content terminal:rounded-none terminal:border-orange-500 dark:border-slate-800 dark:text-slate-200"
                     placeholder="i.e. Whatever you find relevant about this experience"
                   />
                   <button

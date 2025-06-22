@@ -17,12 +17,12 @@ export default function Home({ children }) {
         <meta property="og:image" content="https://runonce.dev/og.jpg" />
       </Head>
       <main>
-        <div className="mx-auto max-w-screen-md px-4">
+        <div className="mx-auto max-w-(--breakpoint-md) px-4">
           <h1 className="my-4 text-4xl font-extrabold tracking-tight">
             Amateur photography
           </h1>
         </div>
-        <div className="mx-auto mb-8 mt-0 grid max-w-screen-md gap-4 px-4 md:grid-cols-2 lg:grid-cols-3">
+        <div className="mx-auto mb-8 mt-0 grid max-w-(--breakpoint-md) gap-4 px-4 md:grid-cols-2 lg:grid-cols-3">
           {photos.map(({ id, src, alt, priority }) => (
             <Link
               key={id}

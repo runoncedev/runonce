@@ -2,7 +2,7 @@ import Button from "@/components/Button";
 
 export default function Edit() {
   return (
-    <main className="mx-auto w-full max-w-screen-md px-4 py-4">
+    <main className="mx-auto w-full max-w-(--breakpoint-md) px-4 py-4">
       <form className=" flex flex-col gap-4">
         <div>
           <label htmlFor="profileImage">Image</label>
