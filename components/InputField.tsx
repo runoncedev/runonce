@@ -44,7 +44,7 @@ const Label = ({ children, className, ...props }: LabelProps) => {
   return (
     <label
       className={twMerge(
-        "font-light transition dark:text-slate-400 dark:group-focus-within:text-slate-300",
+        "font-light transition dark:text-slate-300 dark:group-focus-within:text-slate-300",
         className,
       )}
       {...props}

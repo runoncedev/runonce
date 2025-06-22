@@ -22,14 +22,11 @@ export default function Home() {
           <form className="flex flex-col gap-4">
             <InputField>
               <InputField.Label htmlFor="title">Title *</InputField.Label>
-              <InputField.Input
-                id="title"
-                placeholder="e.g. Software Engineer"
-              />
+              <InputField.Input id="title" placeholder="Job title" />
             </InputField>
             <InputField>
               <InputField.Label htmlFor="subtitle">Subtitle</InputField.Label>
-              <InputField.Input id="subtitle" placeholder="e.g. Company name" />
+              <InputField.Input id="subtitle" placeholder="Company name" />
             </InputField>
             <div className="flex flex-col gap-4 sm:flex-row">
               <InputField className="grow">
@@ -48,12 +45,15 @@ export default function Home() {
                 <InputField.Label htmlFor="new-keyword">
                   Keywords
                 </InputField.Label>
-                <div className="flex flex-col gap-4 sm:flex-row">
+                <div className="flex flex-col gap-1">
                   <InputField.Input
                     id="new-keyword"
                     className="grow"
-                    placeholder="e.g. React, Node.js, SQL"
+                    placeholder="E.g. TypeScript, React, Node.js, Python"
                   />
+                  <p className="text-sm dark:text-slate-400">
+                    A list of keywords separated by commas
+                  </p>
                   {/* <Button
                     type="button"
                     className="flex w-full shrink justify-center gap-2 sm:relative sm:w-fit"
@@ -97,18 +97,21 @@ export default function Home() {
                 <InputField.Label htmlFor="new-highlights">
                   Highlights
                 </InputField.Label>
-                <div className="flex flex-col items-start gap-4 sm:flex-row">
+                <div className="flex flex-col items-start gap-1">
                   <textarea
                     id="new-highlights"
                     rows={1}
                     className="max-h-60 w-full grow resize-none rounded-xl border-2 px-4 py-2 font-normal field-sizing-content terminal:rounded-none terminal:border-orange-500 dark:border-slate-800 dark:text-slate-200"
-                    placeholder="i.e. Whatever you find relevant about this experience"
-                    onKeyDown={(e) => {
-                      if (e.key === "Enter") {
-                        e.preventDefault();
-                      }
-                    }}
+                    placeholder="Most relevant contributions"
+                    // onKeyDown={(e) => {
+                    //   if (e.key === "Enter") {
+                    //     e.preventDefault();
+                    //   }
+                    // }}
                   />
+                  <p className="text-sm dark:text-slate-400">
+                    Accepts Markdown format
+                  </p>
                   {/* <Button
                     type="button"
                     className="flex w-full shrink justify-center gap-2 sm:relative sm:w-fit sm:pl-[44px]"
