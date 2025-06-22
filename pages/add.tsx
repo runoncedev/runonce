@@ -17,7 +17,7 @@ export default function Home() {
       <main>
         <div className="mx-auto max-w-(--breakpoint-md) px-4 pb-4 pt-2">
           <h1 className="my-4 text-5xl font-extrabold drop-shadow-sm dark:drop-shadow-none">
-            Add new experience
+            New experience
           </h1>
           <form className="flex flex-col gap-4">
             <InputField>
