@@ -109,7 +109,7 @@ export default function Home() {
                     id="new-highlights"
                     rows={1}
                     className="min-h-20 max-h-60 w-full grow resize-none rounded-xl border-2 px-4 py-2 font-normal field-sizing-content terminal:rounded-none terminal:border-orange-500 dark:border-slate-800 dark:text-slate-200"
-                    placeholder="Most relevant contributions"
+                    placeholder="Your most relevant contributions"
                     // onKeyDown={(e) => {
                     //   if (e.key === "Enter") {
                     //     e.preventDefault();
