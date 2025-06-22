@@ -50,7 +50,7 @@ export default function Home() {
               <path d="M5 12h14" />
               <path d="M12 5v14" />
             </svg>
-            Add experience
+            New experience
           </Link>
           {/* <Button className="group mb-5 flex items-center justify-center gap-4">
             <svg
