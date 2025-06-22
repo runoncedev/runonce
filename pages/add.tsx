@@ -58,9 +58,9 @@ export default function Home() {
                   />
                   <Button
                     type="button"
-                    className="flex w-full shrink justify-center gap-2 sm:relative sm:w-fit sm:pl-[44px]"
+                    className="flex w-full shrink justify-center gap-2 sm:relative sm:w-fit"
                   >
-                    <PlusIcon className="sm:absolute sm:left-[12px]" />
+                    <PlusIcon />
                     <span className="shrink-0">
                       Add
                       <span className="sm:hidden"> keyword</span>
@@ -69,63 +69,26 @@ export default function Home() {
                 </div>
               </InputField>
               <ul className="flex flex-wrap gap-4">
-                <li className="relative inline-flex items-center gap-2 rounded-xl border-2 px-4 py-2 pr-[44px] font-semibold terminal:rounded-none terminal:border-orange-500 dark:border-slate-800 dark:text-slate-200">
-                  <span>Keyword 1</span>
-                  <button type="button" className="absolute right-[11px]">
+                <li className="group relative inline-flex items-center rounded-lg border-2 terminal:rounded-none terminal:border-orange-500 dark:border-slate-800 dark:text-slate-200 overflow-hidden">
+                  <span className="px-3.5 py-1">Keyword 1</span>
+                  <button
+                    type="button"
+                    className="px-2 py-1 bg-slate-800 cursor-pointer text-slate-400 hover:text-white transition group-hover:text-slate-300 self-stretch"
+                  >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
-                      width="24"
-                      height="24"
+                      width="20"
+                      height="20"
                       viewBox="0 0 24 24"
                       fill="none"
                       stroke="currentColor"
                       stroke-width="2"
                       stroke-linecap="round"
                       stroke-linejoin="round"
-                      className="lucide lucide-x"
+                      className="lucide lucide-x-icon lucide-x"
                     >
-                      <path d="M18 6 6 18"></path>
-                      <path d="m6 6 12 12"></path>
-                    </svg>
-                  </button>
-                </li>
-                <li className="relative inline-flex items-center gap-2 rounded-xl border-2 px-4 py-2 pr-[44px] font-semibold terminal:rounded-none terminal:border-orange-500 dark:border-slate-800 dark:text-slate-200">
-                  <span>Keyword 1</span>
-                  <button type="button" className="absolute right-[11px]">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="24"
-                      height="24"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      className="lucide lucide-x"
-                    >
-                      <path d="M18 6 6 18"></path>
-                      <path d="m6 6 12 12"></path>
-                    </svg>
-                  </button>
-                </li>
-                <li className="relative inline-flex items-center gap-2 rounded-xl border-2 px-4 py-2 pr-[44px] font-semibold terminal:rounded-none terminal:border-orange-500 dark:border-slate-800 dark:text-slate-200">
-                  <span>Keyword 1</span>
-                  <button type="button" className="absolute right-[11px]">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="24"
-                      height="24"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      className="lucide lucide-x"
-                    >
-                      <path d="M18 6 6 18"></path>
-                      <path d="m6 6 12 12"></path>
+                      <path d="M18 6 6 18" />
+                      <path d="m6 6 12 12" />
                     </svg>
                   </button>
                 </li>

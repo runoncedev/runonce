@@ -1,6 +1,10 @@
 import { twMerge } from "tailwind-merge";
 
-export default function PlusIcon({ className }) {
+type PlusIconProps = {
+  className?: string;
+};
+
+export default function PlusIcon({ className }: PlusIconProps) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -11,7 +15,7 @@ export default function PlusIcon({ className }) {
       strokeLinecap="round"
       strokeLinejoin="round"
       className={twMerge(
-        "lucide lucide-plus-icon lucide-plus bg-pink-700 w-6 h-6",
+        "lucide lucide-plus-icon lucide-plus w-6 h-6",
         className,
       )}
     >
