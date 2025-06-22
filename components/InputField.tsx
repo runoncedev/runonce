@@ -7,7 +7,13 @@ type InputFieldProps = {
 
 const InputField = ({ children, className, ...props }: InputFieldProps) => {
   return (
-    <div className={twMerge("group flex flex-col gap-2", className)} {...props}>
+    <div
+      className={twMerge(
+        "group flex flex-col gap-2 [&_label]:self-start",
+        className,
+      )}
+      {...props}
+    >
       {children}
     </div>
   );

@@ -42,18 +42,20 @@ export default function Home() {
             </div>
             <div className="flex flex-col gap-4">
               <InputField>
-                <InputField.Label htmlFor="new-keyword">
-                  Keywords
-                </InputField.Label>
+                <div className="gap-1 flex flex-col">
+                  <InputField.Label htmlFor="new-keyword">
+                    Keywords
+                  </InputField.Label>
+                  <p className="text-sm dark:text-slate-400">
+                    A list of keywords separated by commas
+                  </p>
+                </div>
                 <div className="flex flex-col gap-1">
                   <InputField.Input
                     id="new-keyword"
                     className="grow"
                     placeholder="E.g. TypeScript, React, Node.js, Python"
                   />
-                  <p className="text-sm dark:text-slate-400">
-                    A list of keywords separated by commas
-                  </p>
                   {/* <Button
                     type="button"
                     className="flex w-full shrink justify-center gap-2 sm:relative sm:w-fit"
@@ -94,9 +96,14 @@ export default function Home() {
             </div>
             <div className="flex flex-col gap-4">
               <InputField>
-                <InputField.Label htmlFor="new-highlights">
-                  Highlights
-                </InputField.Label>
+                <div className="gap-1 flex flex-col">
+                  <InputField.Label htmlFor="new-highlights">
+                    Highlights
+                  </InputField.Label>
+                  <p className="text-sm dark:text-slate-400">
+                    Accepts Markdown format
+                  </p>
+                </div>
                 <div className="flex flex-col items-start gap-1">
                   <textarea
                     id="new-highlights"
@@ -109,9 +116,6 @@ export default function Home() {
                     //   }
                     // }}
                   />
-                  <p className="text-sm dark:text-slate-400">
-                    Accepts Markdown format
-                  </p>
                   {/* <Button
                     type="button"
                     className="flex w-full shrink justify-center gap-2 sm:relative sm:w-fit sm:pl-[44px]"
