@@ -24,6 +24,18 @@ export default function Projects() {
           <div className="">
             <dt className=" text-lg font-bold dark:text-slate-300">
               <a
+                href="https://simple-audio-visualizer.vercel.app/"
+                className="group inline-flex items-center gap-2"
+              >
+                Audio visualizer
+                <ExternalIcon />
+              </a>
+            </dt>
+            <dd>Audio visualizer using SVG.</dd>
+          </div>
+          <div className="">
+            <dt className=" text-lg font-bold dark:text-slate-300">
+              <a
                 href="https://hiraganaflashcards.vercel.app/"
                 className="group inline-flex items-center gap-2"
               >
@@ -31,7 +43,7 @@ export default function Projects() {
                 <ExternalIcon />
               </a>
             </dt>
-            <dd>A web app for learning japanese.</dd>
+            <dd>For learning hiragana japanese syllabary.</dd>
           </div>
           <div className="">
             <dt className="text-lg font-bold dark:text-slate-300">
@@ -43,9 +55,7 @@ export default function Projects() {
                 <ExternalIcon />
               </a>
             </dt>
-            <dd>
-              A web app for selecting random episodes from your favorite shows.
-            </dd>
+            <dd>Select random episodes from your favorite shows.</dd>
           </div>
         </dl>
       </main>
