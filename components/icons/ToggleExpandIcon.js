@@ -12,7 +12,7 @@ export default function ToggleExpandIcon({ size = "md", isOpen }) {
       strokeWidth={1.5}
       stroke="currentColor"
       className={
-        `stroke-slate-400 transition duration-300 terminal:stroke-orange-500 ${sizes[size]} ` +
+        `stroke-slate-400 aspect-square transition duration-300 terminal:stroke-orange-500 ${sizes[size]} ` +
         (isOpen ? "scale-y-[-1]" : "")
       }
     >
