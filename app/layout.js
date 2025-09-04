@@ -9,7 +9,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className="flex flex-col bg-white text-slate-900 terminal:bg-black terminal:text-yellow-400 dark:bg-slate-900 dark:text-slate-200 print:!text-black">
+      <body className="flex flex-col bg-white text-slate-900 terminal:bg-black terminal:text-yellow-400 dark:bg-slate-900 dark:text-slate-200 print:text-black!">
         <Providers>{children}</Providers>
       </body>
     </html>

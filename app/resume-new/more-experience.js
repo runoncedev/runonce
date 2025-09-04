@@ -28,7 +28,7 @@ export default function MoreExperience({ children }) {
             : "grid-rows-[0fr] opacity-0")
         }
       >
-        <div className="row-[1_/_span_2] overflow-hidden">
+        <div className="row-[1/span_2] overflow-hidden">
           <div className="mt-7 flex flex-col gap-7">{children}</div>
         </div>
       </div>

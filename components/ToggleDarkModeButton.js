@@ -52,7 +52,7 @@ export default function ToggleDarkModeButton() {
   return (
     mounted && (
       <div
-        className="relative inline-block rounded-full print:hidden"
+        className="relative z-40 inline-block rounded-full print:hidden"
         ref={rootRef}
       >
         <button
@@ -84,7 +84,7 @@ export default function ToggleDarkModeButton() {
                     <button
                       aria-label={themeName}
                       className={
-                        "flex w-full items-center gap-3 rounded-full p-3 [-webkit-tap-highlight-color:transparent] terminal:hover:text-orange-500 " +
+                        "flex w-full items-center gap-3 rounded-full p-3 [-webkit-tap-highlight-color:transparent] hover:terminal:text-orange-500 " +
                         (themeName.toLowerCase() === theme
                           ? "text-sky-600 terminal:text-yellow-400"
                           : "")

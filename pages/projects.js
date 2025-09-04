@@ -13,11 +13,11 @@ export default function Projects() {
         />
         <meta property="og:image" content="https://runonce.dev/og.jpg" />
       </Head>
-      <main className="mx-auto w-full max-w-screen-md px-4">
-        <h1 className="my-4 text-5xl font-extrabold drop-shadow dark:drop-shadow-none">
+      <main className="mx-auto w-full max-w-(--breakpoint-md) px-4">
+        <h1 className="my-4 text-5xl font-extrabold drop-shadow-sm dark:drop-shadow-none">
           Projects
         </h1>
-        <p className="mb-4 text-lg [text-wrap:balance] dark:text-slate-300">
+        <p className="mb-4 text-lg text-balance dark:text-slate-300">
           A highlight of recent personal projects.
         </p>
         <dl className="flex flex-col gap-4">

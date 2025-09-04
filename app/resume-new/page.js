@@ -31,7 +31,7 @@ export default function Page() {
       </Head>
       <main>
         <Header />
-        <div className="mx-auto flex max-w-screen-md flex-col gap-7 px-4 print:max-w-none print:gap-3 print:px-0">
+        <div className="mx-auto flex max-w-(--breakpoint-md) flex-col gap-7 px-4 print:max-w-none print:gap-3 print:px-0">
           <Tromzo />
           <Konfio />
           <Yappa />
@@ -52,9 +52,9 @@ export default function Page() {
             </FadeInOnEntry>
           </MoreExperience>
         </div>
-        {/* <div className="mx-auto max-w-screen-md px-4 py-10">
+        {/* <div className="mx-auto max-w-(--breakpoint-md) px-4 py-10">
           <blockquote cite="https://addyosmani.com/blog/good-code/">
-            <p className="text-center text-3xl font-thin tracking-wide text-slate-300 [text-wrap:balance]">
+            <p className="text-center text-3xl font-thin tracking-wide text-slate-300 text-balance">
               Good code is like a love letter to the next developer who will
               maintain it.
             </p>
@@ -66,7 +66,7 @@ export default function Page() {
             </footer>
           </blockquote>
           <blockquote cite="https://addyosmani.com/blog/good-code/">
-            <p className="text-center text-3xl font-thin tracking-wide text-slate-300 [text-wrap:balance]">
+            <p className="text-center text-3xl font-thin tracking-wide text-slate-300 text-balance">
               You should name a variable using the same care with which you name
               a first-born child.
             </p>
@@ -79,7 +79,7 @@ export default function Page() {
           </blockquote>
         </div> */}
         <div className="mt-8 bg-slate-200 py-6 text-center terminal:bg-black dark:bg-slate-800 sm:text-left">
-          <p className="mx-auto max-w-screen-md px-4 text-slate-800 terminal:text-yellow-200 dark:text-slate-400">
+          <p className="mx-auto max-w-(--breakpoint-md) px-4 text-slate-800 terminal:text-yellow-200 dark:text-slate-400">
             Contact me at{" "}
             <a
               href="mailto:camilorivera86@gmail.com"

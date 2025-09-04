@@ -1,4 +1,4 @@
-import Card from "../Card";
+import Card from "../ExperienceCard";
 import Strong from "../Strong";
 import Subtitle from "../Subtitle";
 import TechList from "../TechList";

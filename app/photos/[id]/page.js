@@ -1,10 +1,12 @@
 "use client";
+import { use } from "react";
 
 import { photos } from "@/utils/photos";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 
-export default function Photo({ params }) {
+export default function Photo(props) {
+  const params = use(props.params);
   const router = useRouter();
 
   const photo = photos.find(({ id }) => id === params.id);
@@ -15,7 +17,7 @@ export default function Photo({ params }) {
 
   return (
     <div
-      className="fixed left-0 top-0 flex h-full w-full flex-col items-center justify-center bg-gray-950/90 p-10 backdrop-blur"
+      className="fixed left-0 top-0 flex h-full w-full flex-col items-center justify-center bg-gray-950/90 p-10 backdrop-blur-sm"
       onClick={onClickHandler}
     >
       <Image
