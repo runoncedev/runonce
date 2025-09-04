@@ -8,7 +8,7 @@ export default function ExperienceCard({
   summary,
   children,
   open = false,
-  editable = true,
+  editable = false,
 }) {
   const [isOpen, setIsOpen] = useState(open);
 
