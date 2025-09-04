@@ -14,26 +14,6 @@ export default function Header() {
   return (
     <div className="relative mx-auto flex max-w-(--breakpoint-md) flex-col items-center  gap-8 px-4 py-10 print:block print:p-0 sm:py-16">
       <button
-        className="absolute right-4 top-4 rounded-sm p-4 transition-opacity duration-150 hover:bg-slate-800 sm:p-2"
-        title="Edit profile information"
-      >
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="20"
-          height="20"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="2"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          class="lucide lucide-pencil-icon lucide-pencil stroke-slate-400"
-        >
-          <path d="M21.174 6.812a1 1 0 0 0-3.986-3.987L3.842 16.174a2 2 0 0 0-.5.83l-1.321 4.352a.5.5 0 0 0 .623.622l4.353-1.32a2 2 0 0 0 .83-.497z" />
-          <path d="m15 5 4 4" />
-        </svg>
-      </button>
-      <button
         aria-label="Terminal mode"
         onClick={() => {
           setTheme(theme === "terminal" ? "system" : "terminal");
