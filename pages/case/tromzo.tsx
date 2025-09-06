@@ -65,6 +65,13 @@ export default function TromzoCase() {
             rx="1"
             ry="1"
           />
+          <text
+            x="12.5"
+            y="15.5"
+            className="fill-blue-400 text-[2px] font-bold"
+          >
+            &lt;h1&gt;Foo&lt;/h1&gt;
+          </text>
           <rect
             x="10"
             y="30"
@@ -75,6 +82,13 @@ export default function TromzoCase() {
             rx="1"
             ry="1"
           />
+          <text
+            x="13.5"
+            y="35.5"
+            className="fill-blue-400 text-[2px] font-bold"
+          >
+            &lt;b&gt;Foo&lt;/b&gt;
+          </text>
           <rect
             x="60"
             y="5"
@@ -85,12 +99,19 @@ export default function TromzoCase() {
             rx="1"
             ry="1"
           />
-          {/* <path d="M 30 15 c 25 0 0 10 30 10" fill="none" stroke="blue" /> */}
-          {/* <path
-            d="M 30 15 h 6 c 9 0 10 10 18 10 h 6"
-            fill="none"
-            stroke="blue"
-          /> */}
+          <text
+            x="63.5"
+            y="14.5"
+            className="fill-blue-400 text-[8px] font-bold"
+          >
+            Foo
+          </text>
+          <path
+            className="stroke-blue-500 fill-none"
+            d="M 64.5 19 h 15 m -15 5 h 10 m -10 5 h 18"
+            stroke-linecap="round"
+            strokeWidth={2}
+          />
         </svg>
         <h2 className="my-4 text-2xl font-bold drop-shadow-sm dark:drop-shadow-none">
           Data visualization
