@@ -15,16 +15,17 @@ export default function TromzoCase() {
         <h1 className="my-4 text-5xl font-extrabold drop-shadow-sm dark:drop-shadow-none">
           My work at Tromzo
         </h1>
-        <p className="mb-4 text-lg text-balance dark:text-slate-300">
-          A highlight of my work at Tromzo as a Frontend Engineer.
+        <p className="mb-4 text-lg dark:text-slate-300">
+          Started in August 2023 as a frontend engineer
         </p>
         <hr />
         <h2 className="my-4 text-3xl font-extrabold drop-shadow-sm dark:drop-shadow-none">
           Overview
         </h2>
         <p>
-          Tromzo is a platform for creating and sharing audio content. I was
-          responsible for the frontend of the platform.
+          Tromzo is a cyber security platform for accelerating risk remediation.
+          It uses AI and data visualization to help users identify and remediate
+          critical vulnerabilities in their software.
         </p>
         <h2 className="my-4 text-2xl font-bold drop-shadow-sm dark:drop-shadow-none">
           Dealing with AI unpredictability
@@ -34,7 +35,63 @@ export default function TromzoCase() {
           with unpredictable HTML/Markdown content, which requires to be handled
           carefully to ensure consistent visual styling.
         </p>
-
+        <svg viewBox="0 0 100 50" className="" width="100%" height="100%">
+          <rect
+            width="100%"
+            height="100%"
+            className="fill-slate-800"
+            rx="1"
+            ry="1"
+          />
+          <path
+            d="M 30 15 h 10 q 5 0 5 5 t 5 5 h 10"
+            fill="none"
+            className="stroke-blue-700"
+            stroke-linecap="round"
+          />
+          <path
+            d="M 30 35 h 10 q 5 0 5 -5 t 5 -5 h 10"
+            fill="none"
+            className="stroke-blue-700"
+            stroke-linecap="round"
+          />
+          <rect
+            x="10"
+            y="10"
+            width="20"
+            height="10"
+            className="stroke-red-400"
+            fill="none"
+            rx="1"
+            ry="1"
+          />
+          <rect
+            x="10"
+            y="30"
+            width="20"
+            height="10"
+            className="stroke-red-400"
+            fill="none"
+            rx="1"
+            ry="1"
+          />
+          <rect
+            x="60"
+            y="5"
+            width="35"
+            height="40"
+            className="stroke-red-400"
+            fill="none"
+            rx="1"
+            ry="1"
+          />
+          {/* <path d="M 30 15 c 25 0 0 10 30 10" fill="none" stroke="blue" /> */}
+          {/* <path
+            d="M 30 15 h 6 c 9 0 10 10 18 10 h 6"
+            fill="none"
+            stroke="blue"
+          /> */}
+        </svg>
         <h2 className="my-4 text-2xl font-bold drop-shadow-sm dark:drop-shadow-none">
           Data visualization
         </h2>
