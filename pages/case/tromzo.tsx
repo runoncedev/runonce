@@ -43,72 +43,82 @@ export default function TromzoCase() {
             rx="1"
             ry="1"
           />
-          <path
+          {/* <path
             d="M 30 15 h 10 q 5 0 5 5 t 5 5 h 10"
             fill="none"
-            className="stroke-blue-700"
+            className="stroke-slate-700 stroke-[0.5]"
             stroke-linecap="round"
-          />
-          <path
+          /> */}
+          {/* <path
             d="M 30 35 h 10 q 5 0 5 -5 t 5 -5 h 10"
             fill="none"
-            className="stroke-blue-700"
+            className="stroke-slate-700 stroke-[0.5]"
             stroke-linecap="round"
+          /> */}
+          <line
+            x1="40"
+            y1="25"
+            x2="50"
+            y2="25"
+            className="stroke-slate-600 stroke-[1]"
+            strokeWidth={0.5}
           />
-          <rect
-            x="10"
-            y="10"
-            width="20"
-            height="10"
-            className="stroke-red-400"
-            fill="none"
-            rx="1"
-            ry="1"
-          />
-          <text
-            x="12.5"
-            y="15.5"
-            className="fill-blue-400 text-[2px] font-bold"
+          <circle
+            r="1.5"
+            className="fill-slate-800 stroke-slate-600 stroke-[1]"
           >
-            &lt;h1&gt;Foo&lt;/h1&gt;
-          </text>
+            <animateMotion
+              dur="2s"
+              repeatCount="indefinite"
+              path="M35 25 h17"
+            />
+          </circle>
+          <g>
+            <rect
+              x="10"
+              y="20"
+              width="30"
+              height="10"
+              className="stroke-slate-600 stroke-[0.75] fill-slate-800"
+              fill="none"
+              rx="1"
+              ry="1"
+            />
+            <path id="P" pathLength="2" d="M10 25 h30" stroke="transparent" />
+            <text>
+              <textPath
+                href="#P"
+                startOffset="1"
+                textAnchor="middle"
+                dominantBaseline="middle"
+                className="fill-cyan-500 tracking-wider text-[3px] font-jetbrains-mono"
+              >
+                <tspan>&lt;h1&gt;</tspan>
+                <tspan className="fill-cyan-200">Foo</tspan>
+                <tspan>&lt;/h1&gt;</tspan>
+              </textPath>
+            </text>
+          </g>
           <rect
-            x="10"
-            y="30"
-            width="20"
-            height="10"
-            className="stroke-red-400"
-            fill="none"
-            rx="1"
-            ry="1"
-          />
-          <text
-            x="13.5"
-            y="35.5"
-            className="fill-blue-400 text-[2px] font-bold"
-          >
-            &lt;b&gt;Foo&lt;/b&gt;
-          </text>
-          <rect
-            x="60"
+            x="50"
             y="5"
             width="35"
             height="40"
-            className="stroke-red-400"
+            className="stroke-slate-600 stroke-[0.75] fill-slate-800"
             fill="none"
             rx="1"
             ry="1"
           />
           <text
-            x="63.5"
+            x="53.5"
             y="14.5"
-            className="fill-blue-400 text-[8px] font-bold"
+            className="fill-slate-300 text-[8px] font-bold"
           >
             Foo
           </text>
           <path
-            className="stroke-blue-500 fill-none"
-            d="M 64.5 19 h 15 m -15 5 h 10 m -10 5 h 18"
+            className="stroke-slate-500 fill-none"
+            d="M 54.5 19 h 15 m -15 5 h 10 m -10 5 h 18"
             stroke-linecap="round"
             strokeWidth={2}
           />
