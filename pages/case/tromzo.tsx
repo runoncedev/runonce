@@ -96,6 +96,29 @@ export default function TromzoCase() {
                 <tspan>&lt;h1&gt;</tspan>
                 <tspan className="fill-cyan-200">Foo</tspan>
                 <tspan>&lt;/h1&gt;</tspan>
+                <animate
+                  attributeName="opacity"
+                  values="1;1;1;1;1;0;0;0;0;1"
+                  dur="10s"
+                  repeatCount="indefinite"
+                />
+              </textPath>
+              <textPath
+                href="#P"
+                startOffset="1"
+                textAnchor="middle"
+                dominantBaseline="middle"
+                className="fill-cyan-500 tracking-wider text-[3px] font-jetbrains-mono"
+              >
+                <tspan>&lt;b&gt;</tspan>
+                <tspan className="fill-cyan-200">Foo</tspan>
+                <tspan>&lt;/b&gt;</tspan>
+                <animate
+                  attributeName="opacity"
+                  values="0;0;0;0;0;1;1;1;1;0"
+                  dur="10s"
+                  repeatCount="indefinite"
+                />
               </textPath>
             </text>
           </g>
