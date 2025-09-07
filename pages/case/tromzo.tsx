@@ -39,7 +39,7 @@ export default function TromzoCase() {
           <rect
             width="100%"
             height="100%"
-            className="fill-slate-800"
+            className="fill-transparent"
             rx="1"
             ry="1"
           />
@@ -65,7 +65,7 @@ export default function TromzoCase() {
           />
           <circle
             r="1.5"
-            className="fill-slate-800 stroke-slate-600 stroke-[1]"
+            className="fill-slate-900 stroke-slate-600 stroke-[1]"
           >
             <animateMotion
               dur="2s"
