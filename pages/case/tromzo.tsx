@@ -35,7 +35,12 @@ export default function TromzoCase() {
           with unpredictable HTML/Markdown content, which requires to be handled
           carefully to ensure consistent visual styling.
         </p>
-        <svg viewBox="0 0 100 50" className="" width="100%" height="100%">
+        <svg
+          viewBox="0 0 100 50"
+          className="transition-all"
+          width="100%"
+          height="100%"
+        >
           <rect
             width="100%"
             height="100%"
@@ -43,29 +48,17 @@ export default function TromzoCase() {
             rx="1"
             ry="1"
           />
-          {/* <path
-            d="M 30 15 h 10 q 5 0 5 5 t 5 5 h 10"
-            fill="none"
-            className="stroke-slate-700 stroke-[0.5]"
-            stroke-linecap="round"
-          /> */}
-          {/* <path
-            d="M 30 35 h 10 q 5 0 5 -5 t 5 -5 h 10"
-            fill="none"
-            className="stroke-slate-700 stroke-[0.5]"
-            stroke-linecap="round"
-          /> */}
           <line
             x1="40"
             y1="25"
             x2="50"
             y2="25"
-            className="stroke-slate-600 stroke-[1]"
+            className="stroke-slate-300 dark:stroke-slate-600 stroke-[1]"
             strokeWidth={0.5}
           />
           <circle
             r="1.5"
-            className="fill-slate-900 stroke-slate-600 stroke-[1]"
+            className="fill-slate-100 dark:fill-slate-900 stroke-slate-300 dark:stroke-slate-600 stroke-[1]"
           >
             <animateMotion
               dur="2s"
@@ -79,7 +72,7 @@ export default function TromzoCase() {
               y="20"
               width="30"
               height="10"
-              className="stroke-slate-600 stroke-[0.75] fill-slate-800"
+              className="stroke-slate-300 dark:stroke-slate-600 stroke-[0.75] fill-slate-100 dark:fill-slate-900"
               fill="none"
               rx="1"
               ry="1"
@@ -91,10 +84,10 @@ export default function TromzoCase() {
                 startOffset="1"
                 textAnchor="middle"
                 dominantBaseline="middle"
-                className="fill-cyan-500 tracking-wider text-[3px] font-jetbrains-mono"
+                className="dark:fill-cyan-500 fill-cyan-400 tracking-wider text-[3px] font-jetbrains-mono"
               >
                 <tspan>&lt;h1&gt;</tspan>
-                <tspan className="fill-cyan-200">Foo</tspan>
+                <tspan className="dark:fill-cyan-200 fill-cyan-500">Foo</tspan>
                 <tspan>&lt;/h1&gt;</tspan>
                 <animate
                   attributeName="opacity"
@@ -108,10 +101,10 @@ export default function TromzoCase() {
                 startOffset="1"
                 textAnchor="middle"
                 dominantBaseline="middle"
-                className="fill-cyan-500 tracking-wider text-[3px] font-jetbrains-mono"
+                className="fill-cyan-400 dark:fill-cyan-500 tracking-wider text-[3px] font-jetbrains-mono"
               >
                 <tspan>&lt;b&gt;</tspan>
-                <tspan className="fill-cyan-200">Foo</tspan>
+                <tspan className="dark:fill-cyan-200 fill-cyan-500">Foo</tspan>
                 <tspan>&lt;/b&gt;</tspan>
                 <animate
                   attributeName="opacity"
@@ -127,7 +120,7 @@ export default function TromzoCase() {
             y="5"
             width="35"
             height="40"
-            className="stroke-slate-600 stroke-[0.75] fill-slate-800"
+            className="dark:stroke-slate-600 stroke-slate-300 stroke-[0.75] fill-slate-100 dark:fill-slate-900"
             fill="none"
             rx="1"
             ry="1"
@@ -135,12 +128,12 @@ export default function TromzoCase() {
           <text
             x="53.5"
             y="14.5"
-            className="fill-slate-300 text-[8px] font-bold"
+            className="dark:fill-slate-300 fill-slate-500 text-[8px] font-bold"
           >
             Foo
           </text>
           <path
-            className="stroke-slate-500 fill-none"
+            className="dark:stroke-slate-500 stroke-slate-300 fill-none"
             d="M 54.5 19 h 15 m -15 5 h 10 m -10 5 h 18"
             stroke-linecap="round"
             strokeWidth={2}
