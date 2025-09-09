@@ -55,7 +55,7 @@ export default function Footer() {
           </li>
           <li className="block print:hidden">
             <a
-              href="https://github.com/oncet/"
+              href="https://github.com/runoncedev"
               target="_blank"
               rel="noopener noreferrer"
               className="transition duration-300 hover:text-slate-800 hover:terminal:text-orange-400 dark:hover:text-slate-300"
