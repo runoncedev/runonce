@@ -16,9 +16,9 @@ export default function TromzoCase() {
           My work at Tromzo
         </h1>
         <p className="mb-4 text-lg dark:text-slate-300">
-          Started in August 2023 as a frontend engineer
+          Started in August 2023 as a frontend engineer.
         </p>
-        <hr />
+        <hr className="border-slate-200 dark:border-slate-800" />
         <h2 className="my-4 text-3xl font-extrabold drop-shadow-sm dark:drop-shadow-none">
           Overview
         </h2>
