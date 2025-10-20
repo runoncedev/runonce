@@ -12,7 +12,7 @@ export default function Header() {
   });
 
   return (
-    <div className="relative mx-auto flex max-w-(--breakpoint-md) flex-col items-center  gap-8 px-4 py-10 print:block print:p-0 sm:py-16">
+    <div className="relative mx-auto flex max-w-(--breakpoint-md) print:max-w-none flex-col items-center  gap-8 px-4 py-10 print:block print:p-0 sm:py-16">
       <button
         aria-label="Terminal mode"
         onClick={() => {
