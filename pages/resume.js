@@ -49,7 +49,7 @@ export default function Home() {
             </div>
             <div
               className={
-                "grid transition-all duration-300 ease-in-out print:grid-rows-[1fr] print:opacity-100 " +
+                "grid transition-all duration-300 ease-in-out print:grid-rows-[1fr] print:opacity-100 print:visible " +
                 (isShowMore
                   ? "grid-rows-[1fr] opacity-100"
                   : "invisible grid-rows-[0fr] opacity-0")
