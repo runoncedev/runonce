@@ -56,10 +56,7 @@ export default function ToggleDarkModeButton() {
         ref={rootRef}
       >
         <button
-          className={
-            "rounded-full p-3 transition [-webkit-tap-highlight-color:transparent] dark:hover:text-slate-200 " +
-            (["Light", "Dark"].includes(theme) ? "text-sky-600" : "")
-          }
+          className="rounded-full p-3 transition [-webkit-tap-highlight-color:transparent] dark:hover:text-slate-200 text-slate-500 hover:text-slate-900"
           onClick={onClickHandler}
           aria-label="Change theme"
         >

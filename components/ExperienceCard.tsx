@@ -89,7 +89,7 @@ export default function ExperienceCard({
                 </button>
               )}
               <button
-                className="flex h-[38px] aspect-square items-center justify-center rounded-md bg-gray-200/30 transition  terminal:rounded-none  terminal:border-orange-500 print:hidden terminal:bg-transparent hover:terminal:border dark:bg-gray-700/30 dark:hover:bg-gray-700/80"
+                className="flex h-[38px] aspect-square items-center justify-center rounded-md bg-gray-200/30 hover:bg-gray-200/50 transition  terminal:rounded-none  terminal:border-orange-500 print:hidden terminal:bg-transparent hover:terminal:border dark:bg-gray-700/30 dark:hover:bg-gray-700/80"
                 onClick={onClickHandler}
                 aria-label="Expand card"
                 title={`${isOpen ? "Collapse" : "Expand"} ${title} card`}
