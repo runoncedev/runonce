@@ -31,7 +31,7 @@ export default function Projects() {
               <ExternalIcon />
             </a>
           </dt>
-          <dd>Parses Deel's card transactions and displays a monthly summary.</dd>
+          <dd>Parses Deel&apos;s card transactions CSV file and displays a monthly summary.</dd>
         </div>
         <div className="">
             <dt className="text-lg font-bold dark:text-slate-300">
