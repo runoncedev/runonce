@@ -21,6 +21,30 @@ export default function Projects() {
           A highlight of recent personal projects.
         </p>
         <dl className="flex flex-col gap-4">
+        <div className="">
+          <dt className="text-lg font-bold dark:text-slate-300">
+            <a
+              href="https://deel-card-transactions-viewer.vercel.app/"
+              className="group inline-flex items-center gap-2"
+            >
+              Deel card transactions viewer
+              <ExternalIcon />
+            </a>
+          </dt>
+          <dd>Parses Deel's card transactions and displays a monthly summary.</dd>
+        </div>
+        <div className="">
+            <dt className="text-lg font-bold dark:text-slate-300">
+              <a
+                href="https://lago-en-linea-next.vercel.app/"
+                className="group inline-flex items-center gap-2"
+              >
+                Lago en línea
+                <ExternalIcon />
+              </a>
+            </dt>
+            <dd>Real-time water quality monitoring</dd>
+          </div>
           <div className="">
             <dt className=" text-lg font-bold dark:text-slate-300">
               <a
