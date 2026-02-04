@@ -18,13 +18,12 @@ export default function EntornosEducativos() {
   return (
     <Card
       title="Full-stack engineer"
+      at="Entornos Educativos"
+      industry="Education and e-learning"
       subtitle={
-        <>
-          <Subtitle>
-            {formattedStartDate} — {formattedDiff}
-          </Subtitle>
-          <Subtitle>Entornos Educativos</Subtitle>
-        </>
+        <Subtitle>
+          {formattedStartDate} — {formattedDiff}
+        </Subtitle>
       }
       summary={
         <TechList>

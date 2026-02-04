@@ -18,13 +18,12 @@ export default function Konfio() {
   return (
     <Card
       title="Frontend engineer"
+      at="Konfio"
+      industry="Fintech and Lending"
       subtitle={
-        <>
-          <Subtitle>
-            {formattedStartDate} — {formattedDiff}
-          </Subtitle>
-          <Subtitle>Konfio</Subtitle>
-        </>
+        <Subtitle>
+          {formattedStartDate} — {formattedDiff}
+        </Subtitle>
       }
       summary={
         <TechList>

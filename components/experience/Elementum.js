@@ -18,13 +18,12 @@ export default function Elementum() {
   return (
     <Card
       title="Frontend engineer"
+      at="Elementum"
+      industry="Supply Chain Management and Logistics"
       subtitle={
-        <>
-          <Subtitle>
-            {formattedStartDate} — {formattedDiff}
-          </Subtitle>
-          <Subtitle>Elementum</Subtitle>
-        </>
+        <Subtitle>
+          {formattedStartDate} — {formattedDiff}
+        </Subtitle>
       }
       summary={
         <TechList>

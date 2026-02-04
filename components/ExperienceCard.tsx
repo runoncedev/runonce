@@ -5,6 +5,8 @@ import { useState } from "react";
 
 export default function ExperienceCard({
   title,
+  at,
+  industry,
   subtitle,
   summary,
   children,
@@ -34,12 +36,15 @@ export default function ExperienceCard({
             }
           >
             <div className="flex gap-3 justify-between flex-grow flex-wrap">
-              <h2 className="text-xl font-semibold flex-grow flex gap-3 flex-wrap min-w-0 items-center">
-                {title}
-                {current && (
-                  <span className="font-light text-slate-400">current</span>
+              <div className="flex flex-col gap-1">
+                <h2 className="text-xl font-semibold flex-grow flex gap-x-3 flex-wrap min-w-0 items-center">
+                  {title}
+                  {at && <span className="font-light text-slate-400">@ {at}</span>}
+                </h2>
+                {industry && (
+                  <div className="text-slate-400 dark:text-slate-300">{industry}</div>
                 )}
-              </h2>
+              </div>
               {url && (
                 <Link
                   href={url}

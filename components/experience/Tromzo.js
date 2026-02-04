@@ -17,15 +17,14 @@ export default function Tromzo() {
 
   return (
     <Card
-      title={"Frontend engineer"}
-      current
+      title="Frontend engineer"
+      at="Tromzo"
+      industry="Cybersecurity and AI"
+      // url="case/tromzo"
       subtitle={
-        <>
-          <Subtitle>
-            {formattedStartDate} — {formattedDiff}
-          </Subtitle>
-          <Subtitle>Tromzo</Subtitle>
-        </>
+        <Subtitle>
+          {formattedStartDate} — {formattedDiff}
+        </Subtitle>
       }
       summary={
         <TechList>
@@ -35,6 +34,7 @@ export default function Tromzo() {
           <TechListItem>React</TechListItem>
           <TechListItem>TypeScript</TechListItem>
           <TechListItem>webpack</TechListItem>
+          <TechListItem>Python</TechListItem>
         </TechList>
       }
     >

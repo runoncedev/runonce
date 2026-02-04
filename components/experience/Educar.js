@@ -18,13 +18,12 @@ export default function Educar() {
   return (
     <Card
       title="Tech lead"
+      at="Educ.ar"
+      industry="GovTech and e-learning"
       subtitle={
-        <>
-          <Subtitle>
-            {formattedStartDate} — {formattedDiff}
-          </Subtitle>
-          <Subtitle>Educ.ar</Subtitle>
-        </>
+        <Subtitle>
+          {formattedStartDate} — {formattedDiff}
+        </Subtitle>
       }
       summary={
         <TechList>
