@@ -35,6 +35,7 @@ export default function Tromzo() {
           <TechListItem>TypeScript</TechListItem>
           <TechListItem>webpack</TechListItem>
           <TechListItem>Python</TechListItem>
+          <TechListItem>Django</TechListItem>
         </TechList>
       }
     >

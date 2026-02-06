@@ -18,7 +18,7 @@ export default function Home() {
           Runonce
         </h1>
         <p className="mb-4 text-lg text-balance dark:text-slate-300">
-          Hi, welcome! 👋 My name is Camilo. I've been working with React and TypeScript for several years, and lately I've developed an interest in SVG and animations.
+          Hi, welcome! 👋 My name is Camilo. I&apos;ve been working with React and TypeScript for several years, and lately I&apos;ve developed an interest in SVG and animations.
         </p>
         <ul className="mb-20 flex gap-4 text-lg text-balance dark:text-slate-300">
           <li>
