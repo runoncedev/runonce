@@ -17,8 +17,8 @@ export default function Home() {
         <h1 className="my-4 text-6xl font-extrabold lowercase tracking-tight drop-shadow-sm dark:drop-shadow-none">
           Runonce
         </h1>
-        <p className="mb-4 text-lg text-balance dark:text-slate-300">
-          Hi, welcome! 👋 My name is Camilo. I&apos;ve been working with React and TypeScript for several years. Lately I&apos;ve developed an interest in SVG and animations.
+        <p className="mb-8 text-lg text-balance dark:text-slate-300">
+          Hi, welcome! <span className="inline-block animate-salute">👋</span> My name is Camilo. I&apos;ve been working with React and TypeScript for several years. Lately I&apos;ve developed an interest in SVG and animations.
         </p>
         <ul className="mb-20 flex gap-4 text-lg text-balance dark:text-slate-300">
           <li>
