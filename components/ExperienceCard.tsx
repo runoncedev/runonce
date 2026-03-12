@@ -39,10 +39,10 @@ export default function ExperienceCard({
               <div className="flex flex-col gap-1">
                 <h2 className="text-xl font-semibold flex-grow flex gap-x-3 flex-wrap min-w-0 items-center">
                   {title}
-                  {at && <span className="font-light text-slate-400">@ {at}</span>}
+                  {at && <span className="font-light text-slate-500 dark:text-slate-300 flex items-center gap-x-3">@<span className="">{at}</span></span>}
                 </h2>
                 {industry && (
-                  <div className="text-slate-400 dark:text-slate-300">{industry}</div>
+                  <div className="text-slate-500 dark:text-slate-300">{industry}</div>
                 )}
               </div>
               {url && (

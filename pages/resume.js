@@ -10,6 +10,7 @@ import Elementum from "@/components/experience/Elementum";
 import EntornosEducativos from "@/components/experience/EntornosEducativos";
 import Konfio from "@/components/experience/Konfio";
 import Persiscal from "@/components/experience/Persiscal";
+import Checkmarx from "@/components/experience/Checkmarx";
 import Tromzo from "@/components/experience/Tromzo";
 import MailIcon from "@/components/icons/MailIcon";
 import ToggleExpandIcon from "@/components/icons/ToggleExpandIcon";
@@ -30,6 +31,7 @@ export default function Home() {
       <main>
         <Header />
         <div className="mx-auto flex max-w-(--breakpoint-md) flex-col gap-7 px-4 print:max-w-none print:gap-3 print:px-0">
+          <Checkmarx />
           <Tromzo />
           <Konfio />
           {/* <Yappa /> */}

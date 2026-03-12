@@ -9,7 +9,7 @@ import getDiff from "./getDiff";
 
 export default function Tromzo() {
   const startDate = new Date("2023-08-01");
-  const endDate = new Date();
+  const endDate = new Date("2025-12-01");
 
   const formattedStartDate = formatDate(startDate);
 
@@ -17,7 +17,7 @@ export default function Tromzo() {
 
   return (
     <Card
-      title="Frontend engineer"
+      title="Full-stack engineer"
       at="Tromzo"
       industry="Cybersecurity and AI"
       // url="case/tromzo"
