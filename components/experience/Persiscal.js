@@ -18,13 +18,12 @@ export default function Persiscal() {
   return (
     <Card
       title="Full-stack engineer"
+      at="Persiscal Consulting"
+      industry="Education and e-learning"
       subtitle={
-        <>
-          <Subtitle>
-            {formattedStartDate} — {formattedDiff}
-          </Subtitle>
-          <Subtitle>Persiscal Consulting</Subtitle>
-        </>
+        <Subtitle>
+          {formattedStartDate} — {formattedDiff}
+        </Subtitle>
       }
       summary={
         <TechList>
