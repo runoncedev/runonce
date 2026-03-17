@@ -3,12 +3,12 @@ import ExternalIcon from "@/components/icons/ExternalIcon";
 import Head from "next/head";
 
 const PROJECTS = [
-  {
-    title: "Deel card transactions viewer",
-    href: "https://deel-card-transactions-viewer.vercel.app/",
-    description:
-      "Parses Deel's card transactions CSV file and displays a monthly summary.",
-  },
+  // {
+  //   title: "Deel card transactions viewer",
+  //   href: "https://deel-card-transactions-viewer.vercel.app/",
+  //   description:
+  //     "Parses Deel's card transactions CSV file and displays a monthly summary.",
+  // },
   {
     title: "Lago en línea",
     href: "https://lago-en-linea-next.vercel.app/",
@@ -60,9 +60,9 @@ export default function Projects() {
                   rel="noreferrer"
                   className="group flex h-full flex-col focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-500 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-50 dark:focus-visible:ring-offset-slate-900"
                 >
-                  <div className="flex aspect-video w-full items-center justify-center border-b border-slate-200 bg-slate-100 text-sm font-medium text-slate-500 dark:border-slate-700 dark:bg-slate-700/30 dark:text-slate-300">
+                  {/* <div className="flex aspect-video w-full items-center justify-center border-b border-slate-200 bg-slate-100 text-sm font-medium text-slate-500 dark:border-slate-700 dark:bg-slate-700/30 dark:text-slate-300">
                     Screenshot placeholder
-                  </div>
+                  </div> */}
 
                   <div className="flex flex-1 flex-col gap-2 p-4">
                     <div className="flex items-start justify-between gap-3">
