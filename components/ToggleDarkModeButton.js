@@ -5,8 +5,6 @@ import ComputerIcon from "./icons/ComputerIcon";
 import MoonIcon from "./icons/MoonIcon";
 import PhoneIcon from "./icons/PhoneIcon";
 import SunIcon from "./icons/SunIcon";
-import TerminalIcon from "./icons/TerminalIcon";
-
 const themeIcons = {
   Light: <SunIcon />,
   Dark: <MoonIcon />,
@@ -16,7 +14,6 @@ const themeIcons = {
       <PhoneIcon />
     </>
   ),
-  Terminal: <TerminalIcon />,
 };
 
 export default function ToggleDarkModeButton() {
@@ -73,17 +70,16 @@ export default function ToggleDarkModeButton() {
           }
         >
           {isThemeMenuOpen && (
-            <ul className="absolute right-0 z-40 mt-2 flex flex-col gap-1 overflow-hidden rounded-xl bg-slate-200 text-center terminal:rounded-none terminal:bg-black terminal:text-orange-800 dark:bg-slate-800">
+            <ul className="absolute right-0 z-40 mt-2 flex flex-col gap-1 overflow-hidden rounded-xl bg-slate-200 text-center dark:bg-slate-800">
               {Object.keys(themeIcons)
-                .filter((themeIcon) => themeIcon !== "Terminal")
                 .map((themeName) => (
                   <li key={themeName}>
                     <button
                       aria-label={themeName}
                       className={
-                        "flex w-full items-center gap-3 rounded-full p-3 [-webkit-tap-highlight-color:transparent] hover:terminal:text-orange-500 " +
+                        "flex w-full items-center gap-3 rounded-full p-3 [-webkit-tap-highlight-color:transparent] " +
                         (themeName.toLowerCase() === theme
-                          ? "text-sky-600 terminal:text-yellow-400"
+                          ? "text-sky-600"
                           : "")
                       }
                       onClick={() => {
@@ -98,7 +94,7 @@ export default function ToggleDarkModeButton() {
                           xmlns="http://www.w3.org/2000/svg"
                           viewBox="0 0 20 20"
                           fill="currentColor"
-                          className="h-4 w-4 text-sky-600 terminal:text-yellow-400"
+                          className="h-4 w-4 text-sky-600"
                         >
                           <path
                             fillRule="evenodd"

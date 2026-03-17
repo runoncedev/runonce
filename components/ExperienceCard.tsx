@@ -24,7 +24,7 @@ export default function ExperienceCard({
   return (
     <Card
       className={
-        "group flex break-inside-avoid flex-col overflow-hidden border-2 transition-all duration-300 [-webkit-tap-highlight-color:transparent] terminal:border-2 terminal:border-dashed	terminal:border-orange-500 dark:border-slate-800/75 print:border-none print:p-0 " +
+        "group flex break-inside-avoid flex-col overflow-hidden border-2 transition-all duration-300 [-webkit-tap-highlight-color:transparent] dark:border-slate-800/75 print:border-none print:p-0 " +
         (isOpen ? "border-slate-400" : "border-slate-200")
       }
     >
@@ -75,7 +75,7 @@ export default function ExperienceCard({
             </div>
             <div className="flex gap-6 items-center h-full">
               {editable && (
-                <button className="flex h-7 w-7 scale-150 items-center justify-center rounded-md  transition duration-150 terminal:rounded-none  terminal:border-orange-500 terminal:bg-transparent hover:terminal:border dark:hover:bg-gray-700/80">
+                <button className="flex h-7 w-7 scale-150 items-center justify-center rounded-md  transition duration-150 dark:hover:bg-gray-700/80">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="24"
@@ -94,7 +94,7 @@ export default function ExperienceCard({
                 </button>
               )}
               <button
-                className="flex h-[38px] aspect-square items-center justify-center rounded-md bg-gray-200/30 hover:bg-gray-200/50 transition  terminal:rounded-none  terminal:border-orange-500 print:hidden terminal:bg-transparent hover:terminal:border dark:bg-gray-700/30 dark:hover:bg-gray-700/80"
+                className="flex h-[38px] aspect-square items-center justify-center rounded-md bg-gray-200/30 hover:bg-gray-200/50 transition print:hidden dark:bg-gray-700/30 dark:hover:bg-gray-700/80"
                 onClick={onClickHandler}
                 aria-label="Expand card"
                 title={`${isOpen ? "Collapse" : "Expand"} ${title} card`}
@@ -110,7 +110,7 @@ export default function ExperienceCard({
       <div
         className={
           "grid px-3 transition-all duration-300 ease-in-out print:block print:opacity-100 " +
-          (isOpen ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0")
+          (isOpen ? "grid-rows-[1fr] opacity-100 blur-none" : "grid-rows-[0fr] opacity-0 blur-xs")
         }
       >
         <div className="row-[1/span_2] overflow-hidden">

@@ -4,7 +4,7 @@ const Card = ({ children, className }) => {
   return (
     <div
       className={twMerge(
-        "rounded-xl bg-slate-50 terminal:rounded-none terminal:bg-black dark:bg-slate-800/75",
+        "rounded-xl bg-slate-50 dark:bg-slate-800/75",
         className
       )}
     >

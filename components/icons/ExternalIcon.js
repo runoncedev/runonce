@@ -3,7 +3,7 @@ const Externalicon = () => (
     xmlns="http://www.w3.org/2000/svg"
     viewBox="0 0 20 20"
     fill="currentColor"
-    className="h-4 w-4 fill-slate-600 transition group-hover:fill-slate-400"
+    className="h-4 w-4 fill-slate-600 transition group-hover:fill-slate-400 dark:fill-slate-300 dark:group-hover:fill-slate-100"
   >
     <path
       fillRule="evenodd"

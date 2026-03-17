@@ -10,7 +10,7 @@ export default function App({ Component, pageProps }) {
       <ThemeProvider
         attribute="class"
         defaultTheme="dark"
-        themes={["light", "dark", "terminal"]}
+        themes={["light", "dark"]}
       >
         <div className="flex min-h-screen flex-col">
           <Header />

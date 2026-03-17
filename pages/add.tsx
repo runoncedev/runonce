@@ -69,7 +69,7 @@ export default function Home() {
                 </div>
               </InputField>
               {/* <ul className="flex flex-wrap gap-4">
-                <li className="group relative inline-flex items-center rounded-lg border-2 terminal:rounded-none terminal:border-orange-500 dark:border-slate-800 dark:text-slate-200 overflow-hidden">
+                <li className="group relative inline-flex items-center rounded-lg border-2 dark:border-slate-800 dark:text-slate-200 overflow-hidden">
                   <span className="px-3.5 py-1">Keyword 1</span>
                   <button
                     type="button"
@@ -108,7 +108,7 @@ export default function Home() {
                   <textarea
                     id="new-highlights"
                     rows={1}
-                    className="min-h-20 max-h-60 w-full grow resize-none rounded-xl border-2 px-4 py-2 font-normal field-sizing-content terminal:rounded-none terminal:border-orange-500 dark:border-slate-800 dark:text-slate-200"
+                    className="min-h-20 max-h-60 w-full grow resize-none rounded-xl border-2 px-4 py-2 font-normal field-sizing-content dark:border-slate-800 dark:text-slate-200"
                     placeholder="Your most relevant contributions"
                     // onKeyDown={(e) => {
                     //   if (e.key === "Enter") {
@@ -144,7 +144,7 @@ export default function Home() {
                     </span>
                     <button
                       type="button"
-                      className="absolute right-0 top-0 rounded-xl border-2 px-2 py-2 font-semibold terminal:rounded-none terminal:border-orange-500 dark:border-transparent dark:text-slate-200"
+                      className="absolute right-0 top-0 rounded-xl border-2 px-2 py-2 font-semibold dark:border-transparent dark:text-slate-200"
                     >
                       <svg
                         xmlns="http://www.w3.org/2000/svg"

@@ -32,7 +32,7 @@ export default function Home() {
         <Header />
         <div className="mx-auto flex  max-w-(--breakpoint-md) justify-between gap-4 px-4">
           <Link
-            className="group mb-5 flex gap-2 rounded-xl border-2 px-4 py-2 font-semibold text-slate-300 underline decoration-transparent decoration-wavy decoration-2 underline-offset-8 transition-all duration-150 terminal:rounded-none terminal:border-orange-500 dark:border-slate-800 dark:text-slate-200 "
+            className="group mb-5 flex gap-2 rounded-xl border-2 px-4 py-2 font-semibold text-slate-300 underline decoration-transparent decoration-wavy decoration-2 underline-offset-8 transition-all duration-150 dark:border-slate-800 dark:text-slate-200 "
             href="/add"
           >
             <svg
@@ -161,14 +161,14 @@ export default function Home() {
             </footer>
           </blockquote>
         </div> */}
-        <div className="mt-8 bg-slate-200 py-6 text-center terminal:bg-black dark:bg-slate-800 print:mt-0 sm:text-left">
-          <p className="mx-auto max-w-(--breakpoint-md) px-4 text-slate-800 terminal:text-yellow-200 dark:text-slate-400">
+        <div className="mt-8 bg-slate-200 py-6 text-center dark:bg-slate-800 print:mt-0 sm:text-left">
+          <p className="mx-auto max-w-(--breakpoint-md) px-4 text-slate-800 dark:text-slate-400">
             Contact me at{" "}
             <a
               href="mailto:camilorivera86@gmail.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="whitespace-nowrap text-lg font-semibold text-sky-600 terminal:text-yellow-400 dark:text-sky-500"
+              className="whitespace-nowrap text-lg font-semibold text-sky-600 dark:text-sky-500"
             >
               <MailIcon /> camilorivera86@gmail.com
             </a>
