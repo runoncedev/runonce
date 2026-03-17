@@ -110,7 +110,7 @@ export default function ExperienceCard({
       <div
         className={
           "grid px-3 transition-all duration-300 ease-in-out print:block print:opacity-100 " +
-          (isOpen ? "grid-rows-[1fr] opacity-100 blur-none" : "grid-rows-[0fr] opacity-0 blur-xs")
+          (isOpen ? "grid-rows-[1fr] opacity-100 blur-none" : "grid-rows-[0fr] opacity-0 blur-xs print:blur-none")
         }
       >
         <div className="row-[1/span_2] overflow-hidden">
