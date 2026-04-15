@@ -25,12 +25,12 @@ export default function Footer() {
           </li>
           <li className="hidden print:block">
             <a
-              href="https://github.com/oncet/"
+              href="https://github.com/runoncedev/"
               target="_blank"
               rel="noopener noreferrer"
               className="transition duration-300 hover:text-slate-800 dark:hover:text-slate-300"
             >
-              github.com/oncet
+              github.com/runoncedev
             </a>
           </li>
           <li className="hidden print:block">
