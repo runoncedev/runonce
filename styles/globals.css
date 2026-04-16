@@ -23,7 +23,7 @@
   @keyframes grow {
     from {
       r: 9;
-      stroke-width: 0.25;
+      stroke-width: 0.1;
     }
     to {
       r: 100;
