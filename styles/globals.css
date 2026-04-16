@@ -19,14 +19,24 @@
     }
   }
 
-  --animate-grow: grow 6000ms linear infinite;
-  @keyframes grow {
+  --animate-grow:
+    grow-r 6000ms linear infinite, shrink-stroke 6000ms ease-in infinite;
+  @keyframes grow-r {
     from {
       r: 9;
-      stroke-width: 0.1;
     }
     to {
       r: 100;
+    }
+  }
+  @keyframes shrink-stroke {
+    from {
+      stroke-width: 0.1;
+    }
+    75% {
+      stroke-width: 0.1;
+    }
+    to {
       stroke-width: 0;
     }
   }
