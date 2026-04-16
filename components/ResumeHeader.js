@@ -34,10 +34,6 @@ export default function Header() {
 
   return (
     <div className="relative mx-auto flex max-w-(--breakpoint-md) print:max-w-none flex-col items-center  gap-8 px-4 py-10 print:block print:p-0 sm:py-16">
-      {/* <button
-        aria-label="Terminal mode"
-        className="h-32 w-32 overflow-hidden rounded-[64px] transition-[border-radius] duration-300 print:hidden"
-      > */}
       <div className="relative">
         <Image
           src={profilePic}
@@ -62,14 +58,13 @@ export default function Header() {
           ))}
         </svg>
       </div>
-      {/* </button> */}
       <div className="max-w-(--breakpoint-md) print:flex print:max-w-none print:flex-row print:justify-between">
         <div className="flex break-inside-avoid flex-col gap-4 text-center print:pt-0 print:text-left">
           <div className="flex flex-col gap-3 print:mt-4">
             <h1 className="text-4xl font-bold tracking-wide">Camilo Rivera</h1>
             <p className="text-2xl font-thin tracking-wide">Web developer</p>
           </div>
-          <p className="text-xl text-slate-300 text-balance terminal:text-orange-500 dark:text-slate-400">
+          <p className="text-xl text-slate-400 text-balance">
             <Strong>React</Strong>, <Strong>TypeScript</Strong>,{" "}
             <Strong>Node.js</Strong>
           </p>
