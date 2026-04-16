@@ -19,7 +19,7 @@
     }
   }
 
-  --animate-grow: grow 6000ms linear infinite backwards;
+  --animate-grow: grow 6000ms linear infinite;
   @keyframes grow {
     from {
       transform: scale(1);
