@@ -27,7 +27,7 @@ export default function Header() {
           }
         : {
             animationDuration: `${RING_ANIMATION_DURATION_MS}ms`,
-            animationDelay: `${delayMs}ms`,
+            animationDelay: `-${delayMs}ms`,
           };
     });
   }, [ringCount, prefersReducedMotion]);
