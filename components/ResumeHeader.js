@@ -19,16 +19,14 @@ export default function Header() {
 
     return Array.from({ length: safeRingCount }, (_, index) => {
       const delayMs = index === 0 ? 0 : index * delayStepMs;
+      const base = {
+        animationDuration: `${RING_ANIMATION_DURATION_MS}ms`,
+        animationDelay: `-${delayMs}ms`,
+        transformOrigin: "10px 10px",
+      };
       return prefersReducedMotion === true
-        ? {
-            animationDuration: `${RING_ANIMATION_DURATION_MS}ms`,
-            animationPlayState: "paused",
-            animationDelay: `-${delayMs}ms`,
-          }
-        : {
-            animationDuration: `${RING_ANIMATION_DURATION_MS}ms`,
-            animationDelay: `-${delayMs}ms`,
-          };
+        ? { ...base, animationPlayState: "paused" }
+        : base;
     });
   }, [ringCount, prefersReducedMotion]);
 
@@ -52,7 +50,8 @@ export default function Header() {
               cy="10"
               r="10"
               opacity="0.25"
-              className="fill-none stroke-slate-400 dark:stroke-slate-600 animate-grow"
+              vectorEffect="non-scaling-stroke"
+              className="fill-none stroke-slate-400 dark:stroke-slate-600 animate-grow stroke-[0.5]"
               style={style}
             />
           ))}

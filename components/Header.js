@@ -4,7 +4,7 @@ import ToggleDarkModeButton from "./ToggleDarkModeButton";
 
 export default function Header() {
   return (
-    <header className="border-b bg-slate-100 dark:bg-slate-900 border-slate-200 dark:border-slate-800 print:hidden">
+    <header className="border-b bg-white dark:bg-slate-900 border-slate-200 dark:border-slate-800 print:hidden">
       <div className="mx-auto flex h-12 max-w-(--breakpoint-md) items-center justify-between px-4 text-right dark:text-slate-400">
         <div>
           <Link
