@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { useMemo, useState } from "react";
 
+import usePrefersReducedMotion from "../hooks/usePrefersReducedMotion";
 import profilePic from "../public/profilePic.jpg";
 import Strong from "./Strong";
 
@@ -9,23 +10,27 @@ const RING_ANIMATION_DURATION_MS = 32000;
 
 export default function Header() {
   const [ringCount] = useState(DEFAULT_RING_COUNT);
+  const prefersReducedMotion = usePrefersReducedMotion();
 
   const ringStyles = useMemo(() => {
     const safeRingCount = Math.max(1, ringCount);
-
-    console.log("safeRingCount", safeRingCount);
 
     const delayStepMs = RING_ANIMATION_DURATION_MS / safeRingCount;
 
     return Array.from({ length: safeRingCount }, (_, index) => {
       const delayMs = index === 0 ? 0 : index * delayStepMs;
-      return {
-        animationDuration: `${RING_ANIMATION_DURATION_MS}ms`,
-        animationDelay: `${delayMs}ms`,
-        // WebkitBackfaceVisibility: "hidden",
-      };
+      return prefersReducedMotion === true
+        ? {
+            animationDuration: `${RING_ANIMATION_DURATION_MS}ms`,
+            animationPlayState: "paused",
+            animationDelay: `-${delayMs}ms`,
+          }
+        : {
+            animationDuration: `${RING_ANIMATION_DURATION_MS}ms`,
+            animationDelay: `${delayMs}ms`,
+          };
     });
-  }, [ringCount]);
+  }, [ringCount, prefersReducedMotion]);
 
   return (
     <div className="relative mx-auto flex max-w-(--breakpoint-md) print:max-w-none flex-col items-center  gap-8 px-4 py-10 print:block print:p-0 sm:py-16">
@@ -46,7 +51,7 @@ export default function Header() {
         >
           {ringStyles.map((style, index) => (
             <circle
-              key={`ring-${index}`}
+              key={`ring-${index}-${prefersReducedMotion}`}
               cx="10"
               cy="10"
               r="10"
