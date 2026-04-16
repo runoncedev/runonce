@@ -22,7 +22,6 @@ export default function Header() {
       const base = {
         animationDuration: `${RING_ANIMATION_DURATION_MS}ms`,
         animationDelay: `-${delayMs}ms`,
-        transformOrigin: "10px 10px",
       };
       return prefersReducedMotion === true
         ? { ...base, animationPlayState: "paused" }
@@ -48,10 +47,9 @@ export default function Header() {
               key={`ring-${index}-${prefersReducedMotion}`}
               cx="10"
               cy="10"
-              r="10"
+              r="9"
               opacity="0.25"
-              vectorEffect="non-scaling-stroke"
-              className="fill-none stroke-slate-400 dark:stroke-slate-600 animate-grow stroke-[0.5]"
+              className="fill-none stroke-slate-400 dark:stroke-slate-600 animate-grow"
               style={style}
             />
           ))}
