@@ -22,20 +22,17 @@
   --animate-grow: grow 6000ms linear infinite backwards;
   @keyframes grow {
     from {
-      scale: 0;
+      r: 9;
     }
-    /* 90% {
-      scale: 10;
-    } */
     to {
-      scale: 12;
+      r: 120;
     }
   }
 
   --animate-fade-out: fade-out 6000ms linear infinite;
   @keyframes fade-out {
     from {
-      opacity: 0.1;
+      opacity: 0.4;
     }
     to {
       opacity: 0;

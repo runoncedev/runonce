@@ -51,7 +51,7 @@ export default function Header() {
               cy="10"
               r="10"
               opacity="0.25"
-              className="transform-fill origin-center fill-none stroke-slate-300 dark:stroke-slate-600 stroke-1 animate-ring"
+              className="fill-none stroke-slate-400 dark:stroke-slate-600 stroke-[0.1] animate-ring"
               style={style}
             />
           ))}
