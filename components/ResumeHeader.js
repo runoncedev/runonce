@@ -20,8 +20,8 @@ export default function Header() {
     return Array.from({ length: safeRingCount }, (_, index) => {
       const delayMs = index === 0 ? 0 : index * delayStepMs;
       return {
-        animationDuration: `${RING_ANIMATION_DURATION_MS}ms, ${RING_ANIMATION_DURATION_MS}ms`,
-        animationDelay: `${delayMs}ms, ${delayMs}ms`,
+        animationDuration: `${RING_ANIMATION_DURATION_MS}ms`,
+        animationDelay: `${delayMs}ms`,
         // WebkitBackfaceVisibility: "hidden",
       };
     });
@@ -51,7 +51,7 @@ export default function Header() {
               cy="10"
               r="10"
               opacity="0.25"
-              className="fill-none stroke-slate-400 dark:stroke-slate-600 stroke-[0.1] animate-ring"
+              className="fill-none stroke-slate-400 dark:stroke-slate-600 animate-grow"
               style={style}
             />
           ))}

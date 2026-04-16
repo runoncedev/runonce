@@ -23,23 +23,13 @@
   @keyframes grow {
     from {
       r: 9;
+      stroke-width: 0.1;
     }
     to {
-      r: 120;
+      r: 100;
+      stroke-width: 0;
     }
   }
-
-  --animate-fade-out: fade-out 6000ms linear infinite;
-  @keyframes fade-out {
-    from {
-      opacity: 0.4;
-    }
-    to {
-      opacity: 0;
-    }
-  }
-
-  --animate-ring: var(--animate-grow), var(--animate-fade-out);
 }
 
 /*
