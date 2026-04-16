@@ -18,6 +18,31 @@
       scale: 1;
     }
   }
+
+  --animate-grow: grow 6000ms linear infinite;
+  @keyframes grow {
+    from {
+      scale: 0;
+    }
+    /* 90% {
+      scale: 10;
+    } */
+    to {
+      scale: 12;
+    }
+  }
+
+  --animate-fade-out: fade-out 6000ms linear infinite;
+  @keyframes fade-out {
+    from {
+      opacity: 0.1;
+    }
+    to {
+      opacity: 0;
+    }
+  }
+
+  --animate-ring: var(--animate-grow), var(--animate-fade-out);
 }
 
 /*

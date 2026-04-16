@@ -1,17 +1,63 @@
 import Image from "next/image";
+import { useMemo, useState } from "react";
 
 import profilePic from "../public/profilePic.jpg";
 import Strong from "./Strong";
 
+const DEFAULT_RING_COUNT = 10;
+const RING_ANIMATION_DURATION_MS = 32000;
+
 export default function Header() {
+  const [ringCount] = useState(DEFAULT_RING_COUNT);
+
+  const ringStyles = useMemo(() => {
+    const safeRingCount = Math.max(1, ringCount);
+
+    console.log("safeRingCount", safeRingCount);
+
+    const delayStepMs = RING_ANIMATION_DURATION_MS / safeRingCount;
+
+    return Array.from({ length: safeRingCount }, (_, index) => {
+      const delayMs = index === 0 ? 0 : index * delayStepMs;
+      return {
+        animationDuration: `${RING_ANIMATION_DURATION_MS}ms, ${RING_ANIMATION_DURATION_MS}ms`,
+        animationDelay: `${delayMs}ms, ${delayMs}ms`,
+        // WebkitBackfaceVisibility: "hidden",
+      };
+    });
+  }, [ringCount]);
+
   return (
     <div className="relative mx-auto flex max-w-(--breakpoint-md) print:max-w-none flex-col items-center  gap-8 px-4 py-10 print:block print:p-0 sm:py-16">
-      <button
+      {/* <button
         aria-label="Terminal mode"
         className="h-32 w-32 overflow-hidden rounded-[64px] transition-[border-radius] duration-300 print:hidden"
-      >
-        <Image src={profilePic} alt="Using an old MSX-like computer" priority />
-      </button>
+      > */}
+      <div className="relative">
+        <Image
+          src={profilePic}
+          alt="Using an old MSX-like computer"
+          priority
+          className="h-32 w-32 overflow-hidden rounded-full print:hidden"
+        />
+        <svg
+          className="absolute top-0 left-0 -z-10 overflow-visible"
+          viewBox="0 0 20 20"
+        >
+          {ringStyles.map((style, index) => (
+            <circle
+              key={`ring-${index}`}
+              cx="10"
+              cy="10"
+              r="10"
+              opacity="0.25"
+              className="transform-fill origin-center fill-none stroke-slate-300 dark:stroke-slate-600 stroke-1 animate-ring"
+              style={style}
+            />
+          ))}
+        </svg>
+      </div>
+      {/* </button> */}
       <div className="max-w-(--breakpoint-md) print:flex print:max-w-none print:flex-row print:justify-between">
         <div className="flex break-inside-avoid flex-col gap-4 text-center print:pt-0 print:text-left">
           <div className="flex flex-col gap-3 print:mt-4">
