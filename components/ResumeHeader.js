@@ -1,56 +1,77 @@
 import Image from "next/image";
-import { useMemo, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 
 import usePrefersReducedMotion from "../hooks/usePrefersReducedMotion";
 import profilePic from "../public/profilePic.jpg";
 import Strong from "./Strong";
 
-const DEFAULT_RING_COUNT = 10;
-const RING_ANIMATION_DURATION_MS = 32000;
+const MAX_RINGS = 6;
+const RING_ANIMATION_DURATION_MS = 10000;
+const SPAWN_INTERVAL_MS = RING_ANIMATION_DURATION_MS / MAX_RINGS;
 
 export default function Header() {
-  const [ringCount] = useState(DEFAULT_RING_COUNT);
+  const [enabled, setEnabled] = useState(false);
+  const [rings, setRings] = useState([]);
   const prefersReducedMotion = usePrefersReducedMotion();
+  const intervalRef = useRef(null);
+  const counterRef = useRef(0);
 
-  const ringStyles = useMemo(() => {
-    const safeRingCount = Math.max(1, ringCount);
+  const spawnRing = useCallback(() => {
+    const id = counterRef.current++;
+    setRings((prev) => [...prev, id]);
+  }, []);
 
-    const delayStepMs = RING_ANIMATION_DURATION_MS / safeRingCount;
+  const removeRing = useCallback((id) => {
+    setRings((prev) => prev.filter((r) => r !== id));
+  }, []);
 
-    return Array.from({ length: safeRingCount }, (_, index) => {
-      const delayMs = index === 0 ? 0 : index * delayStepMs;
-      const base = {
-        animationDuration: `${RING_ANIMATION_DURATION_MS}ms`,
-        animationDelay: `-${delayMs}ms`,
-      };
-      return prefersReducedMotion === true
-        ? { ...base, animationPlayState: "paused" }
-        : base;
-    });
-  }, [ringCount, prefersReducedMotion]);
+  useEffect(() => {
+    if (enabled && !prefersReducedMotion) {
+      spawnRing();
+    }
+    intervalRef.current = setInterval(() => {
+      if (enabled && !prefersReducedMotion) {
+        spawnRing();
+      }
+    }, SPAWN_INTERVAL_MS);
+
+    return () => clearInterval(intervalRef.current);
+  }, [enabled, prefersReducedMotion, spawnRing]);
 
   return (
     <div className="relative mx-auto flex max-w-(--breakpoint-md) print:max-w-none flex-col items-center  gap-8 px-4 py-10 print:block print:p-0 sm:py-16">
       <div className="relative">
-        <Image
-          src={profilePic}
-          alt="Using an old MSX-like computer"
-          priority
-          className="h-32 w-32 overflow-hidden rounded-full print:hidden"
-        />
+        <button
+          onClick={() => setEnabled((e) => !e)}
+          className="rounded-full focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-slate-400"
+          aria-label={
+            enabled ? "Disable ring animation" : "Enable ring animation"
+          }
+          aria-pressed={enabled}
+        >
+          <Image
+            src={profilePic}
+            alt="Using an old MSX-like computer"
+            priority
+            className="h-32 w-32 overflow-hidden rounded-full print:hidden"
+          />
+        </button>
         <svg
           className="absolute top-0 left-0 -z-10 overflow-visible"
           viewBox="0 0 20 20"
         >
-          {ringStyles.map((style, index) => (
+          {rings.map((id) => (
             <circle
-              key={`ring-${index}-${prefersReducedMotion}`}
+              key={id}
               cx="10"
               cy="10"
               r="9"
               opacity="0.25"
               className="fill-none stroke-slate-400 dark:stroke-slate-600 animate-grow"
-              style={style}
+              style={{ animationDuration: `${RING_ANIMATION_DURATION_MS}ms` }}
+              onAnimationEnd={(e) =>
+                e.animationName === "grow-r" && removeRing(id)
+              }
             />
           ))}
         </svg>

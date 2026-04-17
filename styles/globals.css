@@ -19,8 +19,7 @@
     }
   }
 
-  --animate-grow:
-    grow-r 6000ms linear infinite, shrink-stroke 6000ms ease-in infinite;
+  --animate-grow: grow-r 6000ms linear, shrink-stroke 6000ms ease-in;
   @keyframes grow-r {
     from {
       r: 9;
