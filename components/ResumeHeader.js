@@ -5,16 +5,24 @@ import usePrefersReducedMotion from "../hooks/usePrefersReducedMotion";
 import profilePic from "../public/profilePic.jpg";
 import Strong from "./Strong";
 
-const MAX_RINGS = 6;
-const RING_ANIMATION_DURATION_MS = 10000;
-const SPAWN_INTERVAL_MS = RING_ANIMATION_DURATION_MS / MAX_RINGS;
+const MAX_RINGS = 10;
+const SPAWN_INTERVAL_MS = 1000;
+const RING_ANIMATION_DURATION_MS = SPAWN_INTERVAL_MS * MAX_RINGS;
+const QUEUE_MAX = 2;
+const METER_THRESHOLD = 10;
 
 export default function Header() {
-  const [enabled, setEnabled] = useState(false);
   const [rings, setRings] = useState([]);
+  const [streaming, setStreaming] = useState(false);
+  const [meter, setMeter] = useState(0);
   const prefersReducedMotion = usePrefersReducedMotion();
   const intervalRef = useRef(null);
+  const drainTimeoutRef = useRef(null);
   const counterRef = useRef(0);
+  const pendingRef = useRef(0);
+  const drainingRef = useRef(false);
+  const streamingRef = useRef(false);
+  const meterRef = useRef(0);
 
   const spawnRing = useCallback(() => {
     const id = counterRef.current++;
@@ -25,29 +33,71 @@ export default function Header() {
     setRings((prev) => prev.filter((r) => r !== id));
   }, []);
 
-  useEffect(() => {
-    if (enabled && !prefersReducedMotion) {
-      spawnRing();
+  const drainQueue = useCallback(() => {
+    if (pendingRef.current <= 0) {
+      drainingRef.current = false;
+      return;
     }
-    intervalRef.current = setInterval(() => {
-      if (enabled && !prefersReducedMotion) {
-        spawnRing();
-      }
-    }, SPAWN_INTERVAL_MS);
 
-    return () => clearInterval(intervalRef.current);
-  }, [enabled, prefersReducedMotion, spawnRing]);
+    pendingRef.current -= 1;
+    spawnRing();
+
+    const newMeter = meterRef.current + 1;
+    meterRef.current = newMeter;
+    if (newMeter >= METER_THRESHOLD) {
+      drainingRef.current = false;
+      pendingRef.current = 0;
+      streamingRef.current = true;
+      setStreaming(true);
+      meterRef.current = 0;
+      setMeter(0);
+      intervalRef.current = setInterval(spawnRing, SPAWN_INTERVAL_MS);
+    } else {
+      setMeter(newMeter);
+      drainTimeoutRef.current = setTimeout(drainQueue, SPAWN_INTERVAL_MS);
+    }
+  }, [spawnRing]);
+
+  const stopStream = useCallback(() => {
+    streamingRef.current = false;
+    setStreaming(false);
+    clearInterval(intervalRef.current);
+  }, []);
+
+  useEffect(
+    () => () => {
+      clearInterval(intervalRef.current);
+      clearTimeout(drainTimeoutRef.current);
+    },
+    [],
+  );
+
+  const handleClick = useCallback(() => {
+    if (prefersReducedMotion) return;
+
+    if (streamingRef.current) {
+      stopStream();
+      return;
+    }
+
+    if (pendingRef.current >= QUEUE_MAX) return;
+
+    pendingRef.current += 1;
+
+    if (!drainingRef.current) {
+      drainingRef.current = true;
+      drainQueue();
+    }
+  }, [prefersReducedMotion, drainQueue, stopStream]);
 
   return (
     <div className="relative mx-auto flex max-w-(--breakpoint-md) print:max-w-none flex-col items-center  gap-8 px-4 py-10 print:block print:p-0 sm:py-16">
       <div className="relative">
         <button
-          onClick={() => setEnabled((e) => !e)}
+          onClick={handleClick}
           className="rounded-full focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-slate-400"
-          aria-label={
-            enabled ? "Disable ring animation" : "Enable ring animation"
-          }
-          aria-pressed={enabled}
+          aria-label={streaming ? "Stop ring animation" : "Spawn ring"}
+          aria-pressed={streaming}
         >
           <Image
             src={profilePic}
