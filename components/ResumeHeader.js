@@ -6,10 +6,12 @@ import profilePic from "../public/profilePic.jpg";
 import Strong from "./Strong";
 
 const MAX_RINGS = 10;
-const SPAWN_INTERVAL_MS = 1000;
-const RING_ANIMATION_DURATION_MS = SPAWN_INTERVAL_MS * MAX_RINGS;
+const QUEUE_DRAIN_INTERVAL_MS = 600;
+const STREAM_INTERVAL_MS = 600;
+const STREAM_RING_DURATION_MS = STREAM_INTERVAL_MS * MAX_RINGS;
+const SINGLE_RING_DURATION_MS = STREAM_INTERVAL_MS * MAX_RINGS;
 const QUEUE_MAX = 2;
-const METER_THRESHOLD = 10;
+const METER_THRESHOLD = 6;
 
 export default function Header() {
   const [rings, setRings] = useState([]);
@@ -24,13 +26,13 @@ export default function Header() {
   const streamingRef = useRef(false);
   const meterRef = useRef(0);
 
-  const spawnRing = useCallback(() => {
+  const spawnRing = useCallback((durationMs) => {
     const id = counterRef.current++;
-    setRings((prev) => [...prev, id]);
+    setRings((prev) => [...prev, { id, durationMs }]);
   }, []);
 
   const removeRing = useCallback((id) => {
-    setRings((prev) => prev.filter((r) => r !== id));
+    setRings((prev) => prev.filter((r) => r.id !== id));
   }, []);
 
   const drainQueue = useCallback(() => {
@@ -40,21 +42,22 @@ export default function Header() {
     }
 
     pendingRef.current -= 1;
-    spawnRing();
+    const isLast = meterRef.current >= METER_THRESHOLD;
+    spawnRing(isLast ? STREAM_RING_DURATION_MS : SINGLE_RING_DURATION_MS);
 
-    const newMeter = meterRef.current + 1;
-    meterRef.current = newMeter;
-    if (newMeter >= METER_THRESHOLD) {
+    if (isLast) {
       drainingRef.current = false;
       pendingRef.current = 0;
       streamingRef.current = true;
       setStreaming(true);
       meterRef.current = 0;
       setMeter(0);
-      intervalRef.current = setInterval(spawnRing, SPAWN_INTERVAL_MS);
+      intervalRef.current = setInterval(
+        () => spawnRing(STREAM_RING_DURATION_MS),
+        STREAM_INTERVAL_MS,
+      );
     } else {
-      setMeter(newMeter);
-      drainTimeoutRef.current = setTimeout(drainQueue, SPAWN_INTERVAL_MS);
+      drainTimeoutRef.current = setTimeout(drainQueue, QUEUE_DRAIN_INTERVAL_MS);
     }
   }, [spawnRing]);
 
@@ -84,6 +87,10 @@ export default function Header() {
 
     pendingRef.current += 1;
 
+    const newMeter = meterRef.current + 1;
+    meterRef.current = newMeter;
+    setMeter(newMeter);
+
     if (!drainingRef.current) {
       drainingRef.current = true;
       drainQueue();
@@ -110,7 +117,7 @@ export default function Header() {
           className="absolute top-0 left-0 -z-10 overflow-visible"
           viewBox="0 0 20 20"
         >
-          {rings.map((id) => (
+          {rings.map(({ id, durationMs }) => (
             <circle
               key={id}
               cx="10"
@@ -118,7 +125,7 @@ export default function Header() {
               r="9"
               opacity="0.25"
               className="fill-none stroke-slate-400 dark:stroke-slate-600 animate-grow"
-              style={{ animationDuration: `${RING_ANIMATION_DURATION_MS}ms` }}
+              style={{ animationDuration: `${durationMs}ms` }}
               onAnimationEnd={(e) =>
                 e.animationName === "grow-r" && removeRing(id)
               }

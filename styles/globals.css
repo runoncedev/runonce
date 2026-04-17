@@ -30,7 +30,7 @@
   }
   @keyframes shrink-stroke {
     from {
-      stroke-width: 0.1;
+      stroke-width: 0.25;
     }
     75% {
       stroke-width: 0.1;
