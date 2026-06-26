@@ -5,119 +5,62 @@ import usePrefersReducedMotion from "../hooks/usePrefersReducedMotion";
 import profilePic from "../public/profilePic.jpg";
 import Strong from "./Strong";
 
-const MAX_RINGS = 10;
-const QUEUE_DRAIN_INTERVAL_MS = 600;
-const STREAM_INTERVAL_MS = 600;
-const STREAM_RING_DURATION_MS = STREAM_INTERVAL_MS * MAX_RINGS;
-const SINGLE_RING_DURATION_MS = STREAM_INTERVAL_MS * MAX_RINGS;
-const QUEUE_MAX = 2;
-const METER_THRESHOLD = 6;
+const MAX_RINGS = 6;
+const RING_ANIMATION_DURATION_MS = 10000;
+const SPAWN_INTERVAL_MS = RING_ANIMATION_DURATION_MS / MAX_RINGS;
 
 export default function Header() {
+  const [enabled, setEnabled] = useState(false);
   const [rings, setRings] = useState([]);
-  const [streaming, setStreaming] = useState(false);
-  const [meter, setMeter] = useState(0);
   const prefersReducedMotion = usePrefersReducedMotion();
   const intervalRef = useRef(null);
-  const drainTimeoutRef = useRef(null);
   const counterRef = useRef(0);
-  const pendingRef = useRef(0);
-  const drainingRef = useRef(false);
-  const streamingRef = useRef(false);
-  const meterRef = useRef(0);
 
-  const spawnRing = useCallback((durationMs) => {
+  const spawnRing = useCallback(() => {
     const id = counterRef.current++;
-    setRings((prev) => [...prev, { id, durationMs }]);
+    setRings((prev) => [...prev, id]);
   }, []);
 
   const removeRing = useCallback((id) => {
-    setRings((prev) => prev.filter((r) => r.id !== id));
+    setRings((prev) => prev.filter((r) => r !== id));
   }, []);
 
-  const drainQueue = useCallback(() => {
-    if (pendingRef.current <= 0) {
-      drainingRef.current = false;
-      return;
+  useEffect(() => {
+    if (enabled && !prefersReducedMotion) {
+      spawnRing();
     }
+    intervalRef.current = setInterval(() => {
+      if (enabled && !prefersReducedMotion) {
+        spawnRing();
+      }
+    }, SPAWN_INTERVAL_MS);
 
-    pendingRef.current -= 1;
-    const isLast = meterRef.current >= METER_THRESHOLD;
-    spawnRing(isLast ? STREAM_RING_DURATION_MS : SINGLE_RING_DURATION_MS);
-
-    if (isLast) {
-      drainingRef.current = false;
-      pendingRef.current = 0;
-      streamingRef.current = true;
-      setStreaming(true);
-      meterRef.current = 0;
-      setMeter(0);
-      intervalRef.current = setInterval(
-        () => spawnRing(STREAM_RING_DURATION_MS),
-        STREAM_INTERVAL_MS,
-      );
-    } else {
-      drainTimeoutRef.current = setTimeout(drainQueue, QUEUE_DRAIN_INTERVAL_MS);
-    }
-  }, [spawnRing]);
-
-  const stopStream = useCallback(() => {
-    streamingRef.current = false;
-    setStreaming(false);
-    clearInterval(intervalRef.current);
-  }, []);
-
-  useEffect(
-    () => () => {
-      clearInterval(intervalRef.current);
-      clearTimeout(drainTimeoutRef.current);
-    },
-    [],
-  );
-
-  const handleClick = useCallback(() => {
-    if (prefersReducedMotion) return;
-
-    if (streamingRef.current) {
-      stopStream();
-      return;
-    }
-
-    if (pendingRef.current >= QUEUE_MAX) return;
-
-    pendingRef.current += 1;
-
-    const newMeter = meterRef.current + 1;
-    meterRef.current = newMeter;
-    setMeter(newMeter);
-
-    if (!drainingRef.current) {
-      drainingRef.current = true;
-      drainQueue();
-    }
-  }, [prefersReducedMotion, drainQueue, stopStream]);
+    return () => clearInterval(intervalRef.current);
+  }, [enabled, prefersReducedMotion, spawnRing]);
 
   return (
     <div className="relative mx-auto flex max-w-(--breakpoint-md) print:max-w-none flex-col items-center  gap-8 px-4 py-10 print:block print:p-0 sm:py-16">
       <div className="relative">
         <button
-          onClick={handleClick}
-          className="rounded-full focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-slate-400"
-          aria-label={streaming ? "Stop ring animation" : "Spawn ring"}
-          aria-pressed={streaming}
+          onClick={() => setEnabled((e) => !e)}
+          className="group rounded-full focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-slate-400"
+          aria-label={
+            enabled ? "Disable ring animation" : "Enable ring animation"
+          }
+          aria-pressed={enabled}
         >
           <Image
             src={profilePic}
             alt="Using an old MSX-like computer"
             priority
-            className="h-32 w-32 overflow-hidden rounded-full print:hidden"
+            className="h-32 w-32 overflow-hidden rounded-full print:hidden transition-all duration-150 group-active:opacity-95 cursor-pointer"
           />
         </button>
         <svg
           className="absolute top-0 left-0 -z-10 overflow-visible"
           viewBox="0 0 20 20"
         >
-          {rings.map(({ id, durationMs }) => (
+          {rings.map((id) => (
             <circle
               key={id}
               cx="10"
@@ -125,7 +68,7 @@ export default function Header() {
               r="9"
               opacity="0.25"
               className="fill-none stroke-slate-400 dark:stroke-slate-600 animate-grow"
-              style={{ animationDuration: `${durationMs}ms` }}
+              style={{ animationDuration: `${RING_ANIMATION_DURATION_MS}ms` }}
               onAnimationEnd={(e) =>
                 e.animationName === "grow-r" && removeRing(id)
               }
