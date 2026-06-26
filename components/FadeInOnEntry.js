@@ -17,6 +17,8 @@ export default function FadeInOnEntry({ children }) {
     const observer = new IntersectionObserver(callback);
 
     observer.observe(wrapperRef.current);
+
+    return () => observer.disconnect();
   }, []);
 
   return (
