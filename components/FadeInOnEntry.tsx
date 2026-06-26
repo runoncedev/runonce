@@ -1,22 +1,28 @@
 import { useEffect, useRef, useState } from "react";
 
-export default function FadeInOnEntry({ children }) {
-  const wrapperRef = useRef();
+type Props = {
+  children: React.ReactNode;
+};
+
+export default function FadeInOnEntry({ children }: Props) {
+  const wrapperRef = useRef<HTMLDivElement>(null);
   const [isIntersecting, setIsIntersecting] = useState(false);
 
   useEffect(() => {
-    const callback = (entries) => {
+    const element = wrapperRef.current;
+
+    if (!element) return;
+
+    const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
           setIsIntersecting(true);
-          observer.unobserve(wrapperRef.current);
+          observer.unobserve(element);
         }
       });
-    };
+    });
 
-    const observer = new IntersectionObserver(callback);
-
-    observer.observe(wrapperRef.current);
+    observer.observe(element);
 
     return () => observer.disconnect();
   }, []);
