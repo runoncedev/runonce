@@ -1,6 +1,7 @@
 import Card from "@/components/Card";
 import ExternalIcon from "@/components/icons/ExternalIcon";
 import Head from "next/head";
+import Link from "next/link";
 
 const PROJECTS = [
   // {
@@ -56,36 +57,43 @@ export default function Projects() {
               key={project.href}
               className={`h-full ${index === 0 ? "sm:col-span-2" : ""}`}
             >
-              <Card className="h-full overflow-hidden border-2 border-slate-200 transition-colors hover:border-slate-400 dark:border-slate-800/75 dark:hover:border-slate-600">
-                <a
-                  href={project.href}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="group flex h-full flex-col focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-500 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-50 dark:focus-visible:ring-offset-slate-900"
-                >
-                  {/* <div className="flex aspect-video w-full items-center justify-center border-b border-slate-200 bg-slate-100 text-sm font-medium text-slate-500 dark:border-slate-700 dark:bg-slate-700/30 dark:text-slate-300">
-                    Screenshot placeholder
-                  </div> */}
-
-                  <div className="flex flex-1 flex-col gap-2 p-4">
-                    <div className="flex items-start justify-between gap-3">
-                      <h2 className="text-lg font-bold tracking-tight dark:text-slate-200">
-                        {project.title}
-                      </h2>
-                      <span className="mt-1 shrink-0">
-                        <ExternalIcon />
-                      </span>
-                    </div>
-
-                    <p className="text-slate-700 dark:text-slate-300">
-                      {project.description}
-                    </p>
-
-                    <div className="mt-auto pt-2 text-sm font-semibold text-sky-700 transition-colors group-hover:text-sky-500 dark:text-sky-400 dark:group-hover:text-sky-300">
-                      View project
-                    </div>
+              <Card className="group flex h-full break-inside-avoid flex-col overflow-hidden border-2 border-slate-200 transition-all duration-300 [-webkit-tap-highlight-color:transparent] dark:border-slate-800/75 print:border-none print:p-0">
+                <div className="flex flex-col">
+                  <div className="flex w-full items-start justify-between gap-6 pb-3 pl-5 pr-3 pt-3">
+                    <h2 className="flex min-w-0 flex-grow items-center gap-2 text-xl font-semibold">
+                      {project.title === "Random episode" && (
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="24"
+                          height="24"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          strokeWidth="2"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          className="h-4 w-4 shrink-0 stroke-[3px] text-blue-600 dark:text-yellow-400"
+                        >
+                          <rect width="20" height="15" x="2" y="7" rx="2" ry="2" />
+                          <polyline points="17 2 12 7 7 2" />
+                        </svg>
+                      )}
+                      {project.title}
+                    </h2>
+                    <Link
+                      href={project.href}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="flex h-[38px] aspect-square shrink-0 items-center justify-center rounded-md bg-gray-200/30 transition hover:bg-gray-200/50 dark:bg-gray-700/30 dark:hover:bg-gray-700/80"
+                      aria-label={`Open ${project.title}`}
+                    >
+                      <ExternalIcon />
+                    </Link>
                   </div>
-                </a>
+                  <p className="px-5 pb-3 text-slate-700 dark:text-slate-300">
+                    {project.description}
+                  </p>
+                </div>
               </Card>
             </li>
           ))}
