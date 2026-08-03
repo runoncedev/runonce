@@ -9,10 +9,15 @@ const PROJECTS = [
   //   description:
   //     "Parses Deel's card transactions CSV file and displays a monthly summary.",
   // },
+  // {
+  //   title: "Lago en línea",
+  //   href: "https://lago-en-linea-next.vercel.app/",
+  //   description: "Real-time water quality monitoring",
+  // },
   {
-    title: "Lago en línea",
-    href: "https://lago-en-linea-next.vercel.app/",
-    description: "Real-time water quality monitoring",
+    title: "Random episode",
+    href: "https://www.randomepisode.tv/",
+    description: "Select random episodes from your favorite shows.",
   },
   {
     title: "Audio visualizer",
@@ -23,11 +28,6 @@ const PROJECTS = [
     title: "Hiragana flashcards",
     href: "https://hiraganaflashcards.vercel.app/",
     description: "For learning hiragana japanese syllabary.",
-  },
-  {
-    title: "Random episode",
-    href: "https://www.randomepisode.tv/",
-    description: "Select random episodes from your favorite shows.",
   },
 ];
 
@@ -51,8 +51,11 @@ export default function Projects() {
           A highlight of recent personal projects.
         </p>
         <ol className="grid gap-4 pb-10 sm:grid-cols-2">
-          {PROJECTS.map((project) => (
-            <li key={project.href} className="h-full">
+          {PROJECTS.map((project, index) => (
+            <li
+              key={project.href}
+              className={`h-full ${index === 0 ? "sm:col-span-2" : ""}`}
+            >
               <Card className="h-full overflow-hidden border-2 border-slate-200 transition-colors hover:border-slate-400 dark:border-slate-800/75 dark:hover:border-slate-600">
                 <a
                   href={project.href}
